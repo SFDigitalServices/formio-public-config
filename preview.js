@@ -32,10 +32,11 @@
       title?.parentNode.insertBefore(link, title)
       el.hidden = true
     },
-    '.fa-trash:not([hidden])': el => {
+    '.fa-trash': el => {
       el.parentNode.appendChild(document.createTextNode('Delete'))
     },
-    '.fa:not([hidden])': el => {
+    '.fa': el => {
+      el.classList.remove('fa')
       el.hidden = true
     }
   }))
