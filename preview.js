@@ -1,6 +1,8 @@
 // form preview javascript
 (() => {
   console.log('[sfds] preview')
+
+  loadStylesheet('https://unpkg.com/sfgov-design-system@2.2.0/dist/css/utilities.css')
   
   const observer = new MutationObserver(mutations => {
     const el = mutations
@@ -66,5 +68,12 @@
   
   function nearest (el, selector) {
     return el.matches(selector) ? el : el.querySelector(selector)
+  }
+
+  function loadStylesheet (url) {
+    const link = document.createElement('link')
+    link.rel = 'stylesheet'
+    link.href = url
+    return document.head.appendChild(link)
   }
 })()
