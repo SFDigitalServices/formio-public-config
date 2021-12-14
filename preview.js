@@ -23,12 +23,14 @@
       el.classList.add('text-display-lg', 'mb-40')
     },
     'app-form .nav-link[routerlink="../"]': el => {
-      // const link = el.cloneNode(false)
-      // link.classList.add('block', 'mb-8')
-      // link.textContent = 'Back to all forms'
-      // const title = document.querySelector('h2.text-display-lg')
-      // title?.parentNode.insertBefore(link, title)
-      // el.remove()
+      if (el.hidden) return
+      const link = el.cloneNode(false)
+      link.classList.remove('nav-link')
+      link.classList.add('block', 'mb-8')
+      link.textContent = 'Back to all forms'
+      const title = document.querySelector('h2.text-display-lg')
+      title?.parentNode.insertBefore(link, title)
+      el.hidden = true
     }
   }))
 
