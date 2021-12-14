@@ -34,6 +34,7 @@
     },
     '.fa-trash': el => {
       el.parentNode.appendChild(document.createTextNode('Delete'))
+      el.classList.remove('fa-trash')
     },
     '.fa': el => {
       el.classList.remove('fa')
