@@ -3,6 +3,10 @@
   console.log('[sfds] preview')
 
   loadStylesheet('https://unpkg.com/sfgov-design-system@2.2.0/dist/css/utilities.css')
+  loadStylesheet('https://unpkg.com/sfgov-design-system@2.2.0/dist/css/fonts.css')
+
+  document.body.classList.add('font-rubik')
+  document.querySelector('header').classList.add('py-28')
   
   const observer = new MutationObserver(observe({
     '.formio-form': hijackForm,
