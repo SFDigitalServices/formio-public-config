@@ -5,7 +5,10 @@
   loadStylesheet('https://unpkg.com/sfgov-design-system@2.2.0/dist/css/utilities.css')
   
   const observer = new MutationObserver(observe({
-    '.formio-form': hijackForm
+    '.formio-form': hijackForm,
+    'a[routerlink=view]': el => {
+      el.lastChild.nodeValue = 'Preview'
+    }
   }))
 
   observer.observe(document.body, { childList: true, subtree: true })
