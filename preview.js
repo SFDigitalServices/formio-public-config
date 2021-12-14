@@ -6,6 +6,11 @@
     const el = mutations
       .map(({ target }) => nearest(target, '.formio-form'))
       .find(Boolean) // return the first one
+    
+    if (!el.closest('app-view')) {
+      console.warn('[sfds] skipping hijack (not contained in <app-view>):', el)
+      return
+    }
 
     const attr = 'data-hijacked'
     if (el && !el.hasAttribute(attr)) {
