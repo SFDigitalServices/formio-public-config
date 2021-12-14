@@ -38,7 +38,7 @@
     },
     '.fa': el => {
       el.classList.remove('fa')
-      el.hidden = true
+      el.remove()
     }
   }))
 
