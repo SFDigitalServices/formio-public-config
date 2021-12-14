@@ -32,8 +32,13 @@
     ]
 
     const iframe = document.createElement('iframe')
-    iframe.style.width = '100%'
-    iframe.style.height = '800px'
+    setStyle(iframe, {
+      border: 'none',
+      width: '100%',
+      height: '600px',
+      'max-height': '75vh',
+      'overflow-y': 'auto'
+    })
     iframe.srcdoc = `
       <style type="text/css">
         ${styles.map(url => `@import url('${url}');`).join('\n')}
@@ -48,6 +53,12 @@
     return iframe
   }
 
+  function setStyle (el, styles) {
+    for (const [prop, value] of Object.entries(styles)) {
+      el.style.setProperty(prop, value)
+    }
+  }
+  
   function nearest (el, selector) {
     return el.matches(selector) ? el : el.querySelector(selector)
   }
