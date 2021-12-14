@@ -9,7 +9,7 @@
   const header = document.querySelector('header')
   header?.classList.add('py-28', 'mb-96')
   
-  const observer = new MutationObserver(observe({
+  const observer = observe({
     '.formio-form': hijackForm,
     'a[routerlink=view]': el => {
       el.lastChild.nodeValue = 'Preview'
@@ -40,7 +40,7 @@
       el.classList.remove('fa')
       el.remove()
     }
-  }))
+  })
 
   observer.observe(document.body, { childList: true, subtree: true })
 
@@ -112,8 +112,14 @@
   }
 
   function observe (selectors) {
-    return mutations => {
-      for (const [selector, fn] of Object.entries(selectors)) {
+    const entries = Object.entries(selectors)
+    for (const [selector, fn] of entries) {
+      for (const el of document.querySelectorAll(selector)) {
+        fn(el)
+      }
+    }
+    return new MutationObserver(mutations => {
+      for (const [selector, fn] of entries) {
         for (const mute of mutations) {
           const el = nearest(mute.target, selector)
           if (el) {
@@ -121,6 +127,6 @@
           }
         }
       }
-    }
+    })
   }
 })()
