@@ -22,14 +22,14 @@
       el.classList.remove('mb-3')
       el.classList.add('text-display-lg', 'mb-40')
     },
-    'app-form .nav-link[routerlink="../"]': el => {
+    /* 'app-form .nav-link[routerlink="../"]': el => {
       const link = el.cloneNode(false)
       link.classList.add('block', 'mb-8')
       link.textContent = 'Back to all forms'
       const title = document.querySelector('h2.text-display-lg')
       title?.parentNode.insertBefore(link, title)
       el.remove()
-    }
+    } */
   }))
 
   observer.observe(document.body, { childList: true, subtree: true })
