@@ -1,6 +1,7 @@
 // form preview javascript
 console.log('hello from preview.js!')
-(() => {
+
+;(() => {
   
   const observer = new MutationObserver(mutations => {
     const selector = '.formio-form'
