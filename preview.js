@@ -12,9 +12,7 @@
       el.setAttribute(attr, true)
       const form = Object.values(window.Formio.forms).pop()
       console.log('[sfds] form:', form)
-      const [projectId, formName] = form.machineName.split(':')
-      const { host } = new URL(form.url)
-      const url = `${host}/${projectId}/${formName}`
+      const url = `${form.formio.projectUrl}/${form.form.path}`
       console.log('[sfds] rendering preview for: %s', url)
       const preview = renderPreview(url)
       el.hidden = true
