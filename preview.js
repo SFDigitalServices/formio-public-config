@@ -4,28 +4,9 @@
 
   loadStylesheet('https://unpkg.com/sfgov-design-system@2.2.0/dist/css/utilities.css')
   
-  const observer = new MutationObserver(mutations => {
-    const el = mutations
-      .map(({ target }) => nearest(target, '.formio-form'))
-      .find(Boolean) // return the first one
-    
-    if (!el.closest('app-view')) {
-      console.warn('[sfds] skipping hijack (not contained in <app-view>):', el)
-      return
-    }
-
-    const attr = 'data-hijacked'
-    if (el && !el.hasAttribute(attr)) {
-      el.setAttribute(attr, true)
-      const form = Object.values(window.Formio.forms).pop()
-      console.log('[sfds] form:', form)
-      const url = `${form.formio.projectUrl}/${form.form.path}`
-      console.log('[sfds] rendering preview for: %s', url)
-      const preview = renderPreview(url)
-      el.hidden = true
-      el.parentNode.insertBefore(preview, el)
-    }
-  })
+  const observer = new MutationObserver(observe({
+    '.formio-form': hijackForm
+  }))
 
   observer.observe(document.body, { childList: true, subtree: true })
 
@@ -75,5 +56,37 @@
     link.rel = 'stylesheet'
     link.href = url
     return document.head.appendChild(link)
+  }
+
+  function hijackForm (el) {
+    if (!el.closest('app-view')) {
+      console.warn('[sfds] skipping hijack (not contained in <app-view>):', el)
+      return
+    }
+
+    const attr = 'data-hijacked'
+    if (el && !el.hasAttribute(attr)) {
+      el.setAttribute(attr, true)
+      const form = Object.values(window.Formio.forms).pop()
+      console.log('[sfds] form:', form)
+      const url = `${form.formio.projectUrl}/${form.form.path}`
+      console.log('[sfds] rendering preview for: %s', url)
+      const preview = renderPreview(url)
+      el.hidden = true
+      el.parentNode.insertBefore(preview, el)
+    }
+  }
+
+  function observe (selectors) {
+    return mutations => {
+      for (const [selector, fn] of Object.entries(selectors)) {
+        for (const mute of mutations) {
+          const el = nearest(mute.target, selector)
+          if (el) {
+            fn(el)
+          }
+        }
+      }
+    }
   }
 })()
