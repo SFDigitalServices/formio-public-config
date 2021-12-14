@@ -7,6 +7,9 @@
 
   document.body.classList.add('font-rubik')
   document.querySelector('header').classList.add('py-28')
+  const title = document.querySelector('.navbar-brand')
+  title.classList.replace('navbar-brand', 'text-big-desc')
+  title.classList.add('text-inherit')
   
   const observer = new MutationObserver(observe({
     '.formio-form': hijackForm,
