@@ -2,8 +2,8 @@
 (() => {
   console.log('[sfds] preview')
 
-  loadStylesheet('https://unpkg.com/sfgov-design-system@2.2.0/dist/css/utilities.css')
   loadStylesheet('https://unpkg.com/sfgov-design-system@2.2.0/dist/css/fonts.css')
+  loadStylesheet('https://unpkg.com/sfgov-design-system@2.2.0/dist/css/sfds.css')
 
   document.body.classList.add('font-rubik')
   const header = document.querySelector('header')
