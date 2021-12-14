@@ -36,7 +36,8 @@
       border: 'none',
       width: '100%',
       height: '750px',
-      'overflow-y': 'auto'
+      'overflow-y': 'auto',
+      'margin-top': '96px'
     })
     iframe.srcdoc = `
       <style type="text/css">
