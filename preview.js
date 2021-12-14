@@ -6,15 +6,19 @@
   loadStylesheet('https://unpkg.com/sfgov-design-system@2.2.0/dist/css/fonts.css')
 
   document.body.classList.add('font-rubik')
-  document.querySelector('header').classList.add('py-28')
-  const title = document.querySelector('.navbar-brand')
-  title.classList.replace('navbar-brand', 'text-big-desc')
-  title.classList.add('text-inherit')
+  const header = document.querySelector('header')
+  if (header) {
+    header.classList.add('py-28', 'mb-96')
+  }
   
   const observer = new MutationObserver(observe({
     '.formio-form': hijackForm,
     'a[routerlink=view]': el => {
       el.lastChild.nodeValue = 'Preview'
+    },
+    '.navbar-brand': el => {
+      el.classList.replace('navbar-brand', 'text-big-desc')
+      el.classList.add('text-inherit')
     }
   }))
 
