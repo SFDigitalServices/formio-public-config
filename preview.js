@@ -35,8 +35,7 @@
     setStyle(iframe, {
       border: 'none',
       width: '100%',
-      height: '600px',
-      'max-height': '75vh',
+      height: '750px',
       'overflow-y': 'auto'
     })
     iframe.srcdoc = `
@@ -47,7 +46,7 @@
       ${scripts.map(src => `<script src="${src}"></script>`).join('\n')}
       <script>
         Formio.createForm(document.getElementById('formio'), ${JSON.stringify(url)})
-          .then(form => alert('[sfds] form ready!'))
+          .then(form => console.info('[sfds] form ready!'))
       </script>
     `
     return iframe
