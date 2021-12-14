@@ -31,6 +31,12 @@
       const title = document.querySelector('h2.text-display-lg')
       title?.parentNode.insertBefore(link, title)
       el.hidden = true
+    },
+    '.fa-trash:not([hidden])': el => {
+      el.parentNode.appendChild(document.createTextNode('Delete'))
+    },
+    '.fa:not([hidden])': el => {
+      el.hidden = true
     }
   }))
 
