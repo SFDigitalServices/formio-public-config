@@ -32,6 +32,11 @@
       title?.parentNode.insertBefore(link, title)
       el.hidden = true
     },
+    'app-form .nav-link[routerlink=edit]:not([data-moved])': a => {
+      const li = a.parentNode
+      li.parentNode.insertBefore(li, li.parentNode.firstChild)
+      a.setAttribute('data-moved', true)
+    },
     '.fa-trash': el => {
       el.parentNode.appendChild(document.createTextNode('Delete'))
       el.classList.remove('fa-trash')
