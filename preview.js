@@ -37,6 +37,10 @@
       li.parentNode.insertBefore(li, li.parentNode.firstChild)
       a.setAttribute('data-moved', true)
     },
+    // change "Edit Data" button text to "Preview"
+    '.form-btn.form-btn-use': el => {
+      el.textContent = 'Preview'
+    },
     '.fa-trash': el => {
       el.parentNode.appendChild(document.createTextNode('Delete'))
       el.classList.remove('fa-trash')
