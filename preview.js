@@ -37,6 +37,7 @@
       li.parentNode.insertBefore(li, li.parentNode.firstChild)
       a.setAttribute('data-moved', true)
     },
+    // ---ALL FORMS VIEW---
     // change "Edit Data" button text to "Preview"
     '.form-btn.form-btn-use': el => {
       el.textContent = 'Preview'
@@ -46,6 +47,7 @@
       el.classList.remove('btn-outline-secondary', 'btn-sm', 'form-btn')
       el.classList.add('bg-none', 'border-slate-3', 'border-2', 'text-slate-3', 'rounded-4', 'my-2')
     },
+    // ---end ALL FORMS VIEW---
     '.fa-trash': el => {
       el.parentNode.appendChild(document.createTextNode('Delete'))
       el.classList.remove('fa-trash')
