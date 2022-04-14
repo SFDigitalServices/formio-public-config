@@ -55,7 +55,7 @@
     // Updates the "All forms" table button style
     'tbody button': el => {
       el.classList.remove('btn-outline-secondary', 'btn-sm', 'form-btn')
-      el.classList.add('bg-none', 'border-slate-3', 'border-2', 'text-slate-3', 'rounded-4', 'my-2', 'mx-5')
+      el.classList.add('bg-none', 'border-slate-3', 'border-2', 'text-slate-3', 'rounded-4', 'my-2', 'mx-4')
     },
     // ---end ALL FORMS VIEW---
     '.fa-trash': el => {
