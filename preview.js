@@ -38,6 +38,16 @@
       a.setAttribute('data-moved', true)
     },
     // ---ALL FORMS VIEW---
+    // Narrows the form title container width
+    'td .row .col-sm-8': el => {
+    el.classList.remove('col-sm-8')
+      el.classList.add('col-sm-6')
+    },
+    // Widens the button div and adds some formatting
+    'td .row .col-sm-4': el => {
+    el.classList.remove('col-sm-4')
+      el.classList.add('col-sm-6', 'flex', 'justify-end')
+    },
     // change "Edit Data" button text to "Preview"
     '.form-btn.form-btn-use': el => {
       el.textContent = 'Preview'
@@ -45,7 +55,7 @@
     // Updates the "All forms" table button style
     'tbody button': el => {
       el.classList.remove('btn-outline-secondary', 'btn-sm', 'form-btn')
-      el.classList.add('bg-none', 'border-slate-3', 'border-2', 'text-slate-3', 'rounded-4', 'my-2')
+      el.classList.add('bg-none', 'border-slate-3', 'border-2', 'text-slate-3', 'rounded-4', 'my-2', 'mx-5')
     },
     // ---end ALL FORMS VIEW---
     '.fa-trash': el => {
