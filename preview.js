@@ -52,13 +52,17 @@
     '.form-btn.form-btn-use': el => {
       el.textContent = 'Preview'
     },
-    // Updates the "All forms" table button style
+    // Updates table style of "All forms"
+    'table': el => {
+      el.classList.remove('table-striped')
+    },
+    // Updates table button style of "All forms"
     'tbody button': el => {
       el.classList.remove('btn-outline-secondary', 'btn-sm', 'form-btn')
       el.classList.add('bg-none', 'border-slate-3', 'border-2', 'text-slate-3', 'rounded-4', 'my-2', 'mx-4', 'hocus:bg-slate-4', 'hocus:text-white')
     },
-    // Updates the "All forms" table title style
-    'tbody h5': el => {
+    // Updates table title style of "All forms"
+    'tbody .h5': el => {
         el.classList.add('title-xs', 'hocus:title-xs', 'hocus:text-blue-dark')
     }, 
     // ---end ALL FORMS VIEW---
