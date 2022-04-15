@@ -66,6 +66,11 @@
         el.classList.add('title-xs', 'hocus:title-xs', 'hocus:text-blue-dark')
     }, 
     // ---end ALL FORMS VIEW---
+    // Updates the "Edit form" sidebar button style
+    '.formcomponent': el => {
+      el.classList.add('text-white','bg-slate-3','items-baseline','justify-start')
+    },
+    // ---end EDIT FORM VIEW---
     '.fa-trash': el => {
       el.parentNode.appendChild(document.createTextNode('Delete'))
       el.classList.remove('fa-trash')
