@@ -67,7 +67,7 @@
     }, 
     // ---end ALL FORMS VIEW---
     // Updates the "Edit form" sidebar button style
-    '.formcomponent': el => {
+    '.formcomponent.drag-copy': el => {
       el.classList.add('text-white','bg-slate-3','items-baseline','justify-start')
     },
     // ---end EDIT FORM VIEW---
