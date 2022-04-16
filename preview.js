@@ -54,7 +54,7 @@
     },
     // Updates table style of "All forms"
     'table': el => {
-      el.classList.remove('table-striped')
+      el.classList.remove('table-striped', 'table-bordered', 'table-hover')
     },
     // Updates table button style of "All forms"
     'tbody button': el => {
