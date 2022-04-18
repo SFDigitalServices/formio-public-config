@@ -38,6 +38,10 @@
       a.setAttribute('data-moved', true)
     },
     // ---ALL FORMS VIEW---
+    // Update the form header style
+    'th': el => {
+     el.classList.add('bg-slate-3', 'text-small', 'text-white', 'border-b-0', 'px-16', 'py-8')
+    },
     // Narrows the form title container width
     'td .row .col-sm-8': el => {
     el.classList.remove('col-sm-8')
