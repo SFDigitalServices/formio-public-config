@@ -99,9 +99,13 @@
       '.formcomponent.drag-copy': el => {
         el.classList.add('text-white','bg-slate-3','items-baseline','justify-start')
       },
+      // Updates form area layout
+      '.formarea': el => {
+        el.classList.add('flex')
+      },       
       // Updates page breadcrumb background style
       '.breadcrumb': el => {
-        el.classList.add('bg-grey-1')
+        el.classList.add('flex-col','order-2','rounded-0','p-20','bg-grey-1')
       }, 
       // Updates active page breadcrumb style
       '.badge-primary': el => {
@@ -113,7 +117,7 @@
       },
       // Updates add page breadcrumb style
       '.badge-success': el => {
-        el.classList.add('bg-slate-3', 'text-small', 'text-white', 'font-normal', 'rounded-sm', 'px-16')
+        el.classList.add('bg-slate-3', 'text-small', 'text-white', 'font-normal', 'rounded-sm', 'px-16', 'py-6')
       },      
       // Enlarge editor area page title
       '.card-title': el => {
