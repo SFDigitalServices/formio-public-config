@@ -85,7 +85,7 @@
       // --- start EDIT FORM VIEW---      
       // Updates nav tabs style
       '.nav-tabs': el => {
-        el.classList.add('mb-20', 'border-0')
+        el.classList.add('mb-40', 'border-0')
       }, 
       // Updates nav active link style
       '.nav-link.active': el => {
