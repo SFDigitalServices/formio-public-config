@@ -38,6 +38,10 @@
       a.setAttribute('data-moved', true)
     },
     // ---ALL FORMS VIEW---
+    // Add spacing above the table
+    '.input-group': el => {
+     el.classList.add('mb-5')
+    },
     // Update the form header style
     'th': el => {
      el.classList.add('bg-slate-3', 'text-small', 'text-white', 'border-b-0', 'px-16', 'py-8')
