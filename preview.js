@@ -91,18 +91,18 @@
       '.breadcrumb': el => {
         el.classList.add('bg-grey-1')
       }, 
-      // Updates page generic style
-      '.wizard-page-label': el => {
-        el.classList.add('bg-none', 'text-small')
-      },   
-      // Updates active page style
+      // Updates active page breadcrumb style
       '.badge-primary': el => {
-        el.classList.add('text-slate-4', 'font-semibold')
+        el.classList.add('bg-none', 'text-small', 'text-slate-4', 'font-semibold')
       },   
-      // Updates inactive page style
+      // Updates inactive page breadcrumb style
       '.badge-info': el => {
-        el.classList.add('text-action', 'font-normal', 'underline')
+        el.classList.add('bg-none', 'text-small', 'text-action', 'font-normal', 'underline')
       },
+      // Updates add page breadcrumb style
+      '.badge-success': el => {
+        el.classList.add('bg-slate-3', 'text-small', 'text-white', 'font-normal', 'rounded-sm', 'px-16')
+      },      
       // Enlarge editor area page title
       '.card-title': el => {
         el.classList.add('text-title-xl', 'text-slate-4')
