@@ -37,6 +37,12 @@
       li.parentNode.insertBefore(li, li.parentNode.firstChild)
       a.setAttribute('data-moved', true)
     },
+    // ---SITE VIEW---
+    // Standardize form buttons style
+    '.form-control': el => {
+     el.classList.add('h-44', 'bg-slate-1', 'rounded-lg', 'border-0')
+    },
+    // ---end SITE VIEW---
     // ---ALL FORMS VIEW---
     // Add spacing above the table
     '.input-group': el => {
