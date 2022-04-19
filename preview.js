@@ -103,6 +103,15 @@
       '.badge-info': el => {
         el.classList.add('text-action', 'font-normal', 'underline')
       },            
+      // Update editor area page title background
+      '.card-header': el => {
+        el.classList.remove('bg-default')
+        el.classList.add('bg-white', 'border-dashed', 'border-2', 'border-grey-4')
+      },  
+      // Enlarge editor area page title
+      '.card-title': el => {
+        el.classList.add('text-title-xl', 'text-slate-4')
+      },       
       // ---end EDIT FORM VIEW---
       '.fa-trash': el => {
         el.parentNode.appendChild(document.createTextNode('Delete'))
