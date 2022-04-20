@@ -188,7 +188,7 @@
     }
     
     function nearest (el, selector) {
-      return el.matches(selector) ? el : el.querySelector(selector)
+      return el.matches(selector) ? [el] : el.querySelectorAll(selector)
     }
   
     function loadStylesheet (url) {
@@ -227,8 +227,8 @@
       return new MutationObserver(mutations => {
         for (const [selector, fn] of entries) {
           for (const mute of mutations) {
-            const el = nearest(mute.target, selector)
-            if (el) {
+            const els = nearest(mute.target, selector)
+            for (const el of els) {
               fn(el)
             }
           }
