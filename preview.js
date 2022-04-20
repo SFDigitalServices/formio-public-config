@@ -109,15 +109,15 @@
       }, 
       // Updates active page breadcrumb style
       '.badge-primary': el => {
-        el.classList.add('bg-none', 'text-small', 'text-slate-4', 'font-semibold')
+        el.classList.add('bg-none', 'text-small', 'text-slate-4', 'font-semibold', 'p-0', 'mb-8')
       },   
       // Updates inactive page breadcrumb style
       '.badge-info': el => {
-        el.classList.add('bg-none', 'text-small', 'text-action', 'font-normal', 'underline')
+        el.classList.add('bg-none', 'text-small', 'text-action', 'font-normal', 'underline', 'p-0', 'mb-8')
       },
       // Updates add page breadcrumb style
       '.badge-success': el => {
-        el.classList.add('bg-slate-3', 'text-small', 'text-white', 'font-normal', 'rounded-sm', 'px-16', 'py-6')
+        el.classList.add('bg-slate-3', 'text-small', 'text-white', 'font-normal', 'rounded-sm', 'block', 'mt-16', 'm-0', 'p-8')
       },      
       // Enlarge editor area page title
       '.card-title': el => {
