@@ -82,7 +82,7 @@
       },
       // Updates table spacing of "All forms"
       '.table td': el => {
-        el.classList.add('p-8')
+        el.classList.add('p-16')
       }, 
       // Updates table title style of "All forms"
       '.row h5': el => {
