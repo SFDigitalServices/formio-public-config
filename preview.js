@@ -148,16 +148,10 @@
         el.classList.remove('fa-trash')
       },
       // Remove FontAwesome (.fa) icons in specific places
-      `
-        table .fa,
-        .nav-link .fa,
-        .fa-share-alt
-      `: el => {
-          el.classList.remove('fa')
-          el.remove()
-        }
+      'table .fa, .nav-link .fa, .fa-share-alt': el => {
+        el.classList.remove('fa')
+        el.remove()
       },
-      */
       '.nav.mb-2': el => el.classList.replace('mb-2', 'mb-20'),
       '.builder-group-button': el => {
         el.classList.remove('builder-group-button')
