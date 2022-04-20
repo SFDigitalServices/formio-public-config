@@ -122,6 +122,11 @@
       // Updates add page breadcrumb style
       '.badge-success': el => {
         el.classList.add('bg-slate-3', 'text-small', 'text-white', 'font-normal', 'rounded-sm', 'block', 'mt-16', 'm-0', 'p-8')
+      },  
+      // Update editor area card header style
+      '.card-header': el => {
+        el.classList.remove('bg-default')  
+        el.classList.add('bg-white', 'border-dashed','border-1','rounded-0','','')
       },      
       // Enlarge editor area page title
       '.card-title': el => {
