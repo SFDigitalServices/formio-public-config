@@ -42,6 +42,10 @@
       '.form-control': el => {
        el.classList.add('h-44', 'bg-slate-1', 'rounded-lg', 'border-0')
       },
+      // Standardize choice input style
+      '.choices__input': el => {
+        el.classList.add('bg-slate-1')
+      },
       // --- end SITE VIEW---
 
       // --- start ALL FORMS VIEW---
