@@ -91,14 +91,16 @@
       '.nav-tabs': el => {
         el.classList.add('mb-40', 'border-0')
       }, 
-      // Updates nav active link style
-      '.nav-link.active': el => {
-        el.classList.add('rounded-0', 'bg-slate-1', 'text-slate-4', 'border-slate-2', 'border-b-4', 'border-t-0', 'border-l-0', 'border-r-0')
-      }, 
+
       // Updates nav link style
       '.nav-link': el => {
         el.classList.add('rounded-0', 'bg-none', 'text-slate-4', 'border-grey-3', 'border-b-2', 'border-t-0', 'border-l-0', 'border-r-0')
       },                
+      // Updates nav active link style
+      '.nav-link.active': el => {
+        el.classList.add('rounded-0', 'bg-slate-1', 'text-slate-4', 'border-slate-2', 'border-b-4', 'border-t-0', 'border-l-0', 'border-r-0')
+      }, 
+
       // Updates sidebar button style
       '.formcomponent.drag-copy': el => {
         el.classList.add('text-white','bg-slate-3','items-baseline','justify-start')
