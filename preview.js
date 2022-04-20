@@ -126,7 +126,7 @@
       // Update editor area card header style
       '.card-header': el => {
         el.classList.remove('bg-default')  
-        el.classList.add('bg-white', 'border-dashed','border-1','rounded-0','','')
+        el.classList.add('bg-white', 'border-dashed','border-1','rounded-0')
       },      
       // Enlarge editor area page title
       '.card-title': el => {
