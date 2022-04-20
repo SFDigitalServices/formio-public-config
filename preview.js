@@ -93,16 +93,16 @@
       }, 
 
       // Updates nav link style
-      '.nav-item': el => {
+      '.nav-link': el => {
         el.classList.add('rounded-0', 'bg-none', 'text-slate-4', 'border-grey-3', 'border-b-2', 'border-t-0', 'border-l-0', 'border-r-0')
       },                
       // Updates nav active link style
-      '.nav-item.active': el => {
+      '.nav-link.active': el => {
         el.classList.remove('bg-none', 'border-grey-3', 'border-b-2')
         el.classList.add('bg-slate-1', 'text-slate-4', 'border-slate-2', 'border-b-4')
       }, 
       // Updates nav *inactive* link style
-      '.nav-item:not(.active)': el => {
+      '.nav-link:not(.active)': el => {
         el.classList.remove('bg-slate-1', 'text-slate-4', 'border-slate-2', 'border-b-4')
         el.classList.add('bg-none', 'border-grey-3', 'border-b-2')
       }, 
