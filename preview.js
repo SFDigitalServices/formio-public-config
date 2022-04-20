@@ -130,7 +130,8 @@
       // Updates add page breadcrumb style
       '[ref="addPage"]': el => {
         el.classList.add('bg-slate-3', 'text-small', 'text-white', 'font-normal', 'rounded-sm', 'block', 'mt-16', 'm-0', 'p-8')
-        el.querySelector('i')?.textContent = 'Add new page'
+        const icon = el.querySelector('i')
+        if (icon) icon.textContent = 'Add new page'
       },  
       // Update editor area card header style
       '.card-header': el => {
