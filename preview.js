@@ -98,7 +98,12 @@
       },                
       // Updates nav active link style
       '.nav-link.active': el => {
-        el.classList.add('rounded-0', 'bg-slate-1', 'text-slate-4', 'border-slate-2', 'border-b-4', 'border-t-0', 'border-l-0', 'border-r-0')
+        el.classList.add('bg-slate-1', 'text-slate-4', 'border-slate-2', 'border-b-4')
+      }, 
+      // Updates nav *inactive* link style
+      '.nav-link:not(.active)': el => {
+        el.classList.remove('bg-slate-1', 'text-slate-4', 'border-slate-2', 'border-b-4')
+        el.classList.add('bg-none', 'border-grey-3', 'border-b-2')
       }, 
 
       // Updates sidebar button style
