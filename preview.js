@@ -145,13 +145,13 @@
         el.parentNode.appendChild(document.createTextNode('Delete'))
         el.classList.remove('fa-trash')
       },
+      /*
       '.fa': el => {
-        // don't delete FontAwesome icons in the builder sidebar
-        if (!el.closest('.builder-sidebar')) {
           el.classList.remove('fa')
           el.remove()
         }
       },
+      */
       '.nav.mb-2': el => el.classList.replace('mb-2', 'mb-20'),
       '.builder-group-button': el => {
         el.classList.remove('builder-group-button')
