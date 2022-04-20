@@ -139,14 +139,20 @@
       // Enlarge editor area page title
       '.card-title': el => {
         el.classList.add('text-title-xl', 'text-slate-4')
-      },       
+      }, 
       // ---end EDIT FORM VIEW---
+
+      // Replace trash icons with the text "Delete"
       '.fa-trash': el => {
         el.parentNode.appendChild(document.createTextNode('Delete'))
         el.classList.remove('fa-trash')
       },
-      /*
-      '.fa': el => {
+      // Remove FontAwesome (.fa) icons in specific places
+      `
+        table .fa,
+        .nav-link .fa,
+        .fa-share-alt
+      `: el => {
           el.classList.remove('fa')
           el.remove()
         }
