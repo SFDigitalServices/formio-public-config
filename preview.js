@@ -139,6 +139,11 @@
           icon.nextSibling.textContent = 'Add new page'
         } 
       },  
+      // Update editor area card style
+      '.builder-component .card': el => {
+        el.classList.remove('border')
+        el.classList.add('border-0')
+      },  
       // Update editor area card header style
       '.builder-component .card-header': el => {
         el.classList.remove('bg-default')  
