@@ -128,8 +128,9 @@
         el.classList.add('bg-none', 'text-small', 'text-action', 'font-normal', 'underline', 'p-0', 'mb-8')
       },
       // Updates add page breadcrumb style
-      '.badge-success': el => {
+      '[ref="addPage"]': el => {
         el.classList.add('bg-slate-3', 'text-small', 'text-white', 'font-normal', 'rounded-sm', 'block', 'mt-16', 'm-0', 'p-8')
+        el.textContent = 'Add page'
       },  
       // Update editor area card header style
       '.card-header': el => {
