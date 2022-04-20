@@ -117,7 +117,11 @@
       // Updates form area layout
       '.formarea': el => {
         el.classList.add('flex')
-      },       
+      }, 
+      // Updates builder component drag container style
+      '[ref="-container"]': el => {
+        el.classList.add('bg-grey-1', 'p-16')
+      },        
       // Updates page breadcrumb background style
       '.breadcrumb': el => {
         el.classList.add('flex-col','order-2','rounded-0','p-20','bg-grey-1')
@@ -147,11 +151,11 @@
       // Update editor area card header style
       '.builder-component .card-header': el => {
         el.classList.remove('bg-default')  
-        el.classList.add('bg-white', 'border-dashed','border-grey-3', 'border-1','rounded-0')
+        el.classList.add('bg-white', 'border-dashed','border-grey-4', 'border-1','rounded-0')
       },     
       // Update editor area component border style
       '.formbuilder .formio-component-content': el => {
-       el.classList.add('border-dashed','border-grey-3', 'border-1')
+       el.classList.add('border-dashed','border-grey-4', 'border-1')
       },        
       // Enlarge editor area page title
       '.card-title': el => {
