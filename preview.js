@@ -142,8 +142,12 @@
       // Update editor area card header style
       '.builder-component .card-header': el => {
         el.classList.remove('bg-default')  
-        el.classList.add('bg-white', 'border-dashed','border-1','rounded-0')
-      },      
+        el.classList.add('bg-white', 'border-dashed','border-grey-3', 'border-1','rounded-0')
+      },     
+      // Update editor area component border style
+      '.formbuilder .formio-component-content': el => {
+       el.classList.add('border-dashed','border-grey-3', 'border-1')
+      },        
       // Enlarge editor area page title
       '.card-title': el => {
         el.classList.add('text-title-xl', 'text-slate-4')
