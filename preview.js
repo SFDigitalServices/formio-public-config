@@ -128,15 +128,15 @@
       }, 
       // Updates active page breadcrumb style
       '.badge-primary': el => {
-        el.classList.add('bg-none', 'text-small', 'text-slate-4', 'font-semibold', 'p-0', 'mb-8')
+        el.classList.add('bg-none', 'text-small', 'text-slate-4', 'font-medium', 'p-0', 'mb-8')
       },   
       // Updates inactive page breadcrumb style
       '.badge-info': el => {
-        el.classList.add('bg-none', 'text-small', 'text-action', 'font-normal', 'underline', 'p-0', 'mb-8')
+        el.classList.add('bg-none', 'text-small', 'text-action', 'font-regular', 'underline', 'p-0', 'mb-8')
       },
       // Updates add page breadcrumb style
       '[ref="addPage"]': el => {
-        el.classList.add('bg-slate-3', 'text-small', 'text-white', 'font-normal', 'rounded-sm', 'block', 'mt-16', 'm-0', 'p-8')
+        el.classList.add('bg-slate-3', 'text-small', 'text-white', 'font-semibold', 'rounded-sm', 'block', 'mt-16', 'm-0', 'p-8')
         const icon = el.querySelector('i')
         if (icon) {
           icon.classList.add('mr-4')
