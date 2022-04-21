@@ -112,10 +112,14 @@
       // Increase form group margin bottom  
       '.form-group': el => {
         el.classList.add('mb-40')
-      },       
+      }, 
+      // Increase sidebar spacing
+      '.card.form-builder-panel': el => {
+        el.classList.add('mb-8')
+      },
       // Updates sidebar button style
       '.formcomponent.drag-copy': el => {
-        el.classList.add('text-white','bg-slate-3','items-baseline','justify-start')
+        el.classList.add('bg-slate-3', 'text-white', 'items-baseline','justify-start')
       },
       // Updates form area layout
       '.formarea': el => {
