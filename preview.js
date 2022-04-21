@@ -120,11 +120,11 @@
       }, 
       // Updates builder component drag container style
       '[ref="-container"]': el => {
-        el.classList.add('bg-grey-1', 'p-16')
+        el.classList.add('bg-grey-1', 'py-16', 'pl-16')
       },        
       // Updates page breadcrumb background style
       '.breadcrumb': el => {
-        el.classList.add('flex-col','order-2','rounded-0','p-20','bg-grey-1')
+        el.classList.add('flex-col','order-2', 'w-1/3', 'rounded-0', 'p-28', 'bg-grey-1')
       }, 
       // Updates active page breadcrumb style
       '.badge-primary': el => {
@@ -136,6 +136,7 @@
       },
       // Updates add page breadcrumb style
       '[ref="addPage"]': el => {
+        el.classList.remove('mr-2')
         el.classList.add('bg-slate-3', 'text-small', 'text-white', 'font-semibold', 'rounded-sm', 'block', 'mt-16', 'm-0', 'p-8')
         const icon = el.querySelector('i')
         if (icon) {
