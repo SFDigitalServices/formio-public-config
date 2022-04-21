@@ -109,7 +109,10 @@
         el.classList.remove('bg-slate-1', 'border-slate-2', 'border-b-4')
         el.classList.add('bg-none', 'text-body', 'text-slate-3', 'font-medium', 'border-grey-3', 'border-b-2')
       }, 
-
+      // Increase form group margin bottom  
+      '.form-group': el => {
+        el.classList.add('mb-40')
+      },    
       // Updates sidebar button style
       '.formcomponent.drag-copy': el => {
         el.classList.add('text-white','bg-slate-3','items-baseline','justify-start')
