@@ -85,7 +85,7 @@
         el.classList.add('p-16')
       }, 
       // Updates table title style of "All forms"
-      '.row h5': el => {
+      '.table h5': el => {
           el.classList.add('title-xs', 'hocus:title-xs', 'hocus:text-blue-dark')
       }, 
       // --- end ALL FORMS VIEW---
