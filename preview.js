@@ -112,7 +112,7 @@
       // Increase form group margin bottom  
       '.form-group': el => {
         el.classList.add('mb-40')
-      },    
+      },       
       // Updates sidebar button style
       '.formcomponent.drag-copy': el => {
         el.classList.add('text-white','bg-slate-3','items-baseline','justify-start')
@@ -131,10 +131,12 @@
       }, 
       // Updates active page breadcrumb style
       '.badge-primary': el => {
+        el.classList.remove('mr-2')  
         el.classList.add('bg-none', 'text-small', 'text-slate-4', 'font-medium', 'p-0', 'mb-8')
       },   
       // Updates inactive page breadcrumb style
       '.badge-info': el => {
+        el.classList.remove('mr-2')  
         el.classList.add('bg-none', 'text-small', 'text-action', 'font-regular', 'underline', 'p-0', 'mb-8')
       },
       // Updates add page breadcrumb style
