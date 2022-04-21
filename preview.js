@@ -186,7 +186,7 @@
       '.nav.mb-2': el => el.classList.replace('mb-2', 'mb-20'),
       '.builder-group-button': el => {
         el.classList.remove('builder-group-button')
-        el.classList.add('bg-grey-2', 'text-black')
+        el.classList.add('bg-grey-2', 'text-black', 'text-left', 'p-8')
       }
     })
   
