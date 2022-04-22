@@ -117,6 +117,10 @@
       '.card.form-builder-panel': el => {
         el.classList.add('mb-8')
       },
+      // Updates sidebar folder style
+      '.card-header.form-builder-group-header': el => {
+        el.classList.add('border-0')
+      },      
       // Updates sidebar button style
       '.formcomponent.drag-copy': el => {
         el.classList.add('bg-slate-3', 'text-white', 'items-baseline','justify-start')
@@ -161,7 +165,7 @@
       // Update editor area card header style
       '.builder-component .card-header': el => {
         el.classList.remove('bg-default')  
-        el.classList.add('bg-white', 'border-dashed','border-grey-4', 'border-1','rounded-0')
+        el.classList.add('bg-white', 'border-dashed','border-grey-4', 'border-1','rounded-0','border-0')
       },     
       // Update editor area component border style
       '.formbuilder .formio-component-content': el => {
