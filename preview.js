@@ -98,6 +98,13 @@
       '.table h5': el => {
           el.classList.add('title-xs', 'hocus:title-xs', 'hocus:text-blue-dark')
       }, 
+      // Updates form item counter style 
+      '.item-counter': el => {
+        el.classList.add('text-slate-2')
+      },     
+      '.page-num': el => {
+        el.classList.add('text-slate-2','text-body','font-medium')
+      },       
       // --- end ALL FORMS VIEW---
 
       // --- start EDIT FORM VIEW---      
