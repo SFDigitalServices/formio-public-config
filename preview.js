@@ -44,11 +44,12 @@
       },
       '.card-header.panel-heading': el => {
        el.classList.add('border-0','bg-none')
-      },       
+      }, 
       // Disable the login button nav item       
       'a[routerlink=login]': el => {
        el.classList.remove('rounded-0', 'border-t-0', 'border-l-0', 'border-r-0', 'bg-slate-1', 'text-body', 'text-slate-3', 'font-medium', 'border-slate-2', 'border-b-4')
-      },      
+        el.classList.add('border-0', 'p-0', 'text-title-xl-desktop', 'text-black')
+      },       
       // --- end LOGIN PAGE---
 
       // --- start SITE VIEW---
