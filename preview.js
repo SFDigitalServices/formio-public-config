@@ -37,6 +37,16 @@
         li.parentNode.insertBefore(li, li.parentNode.firstChild)
         a.setAttribute('data-moved', true)
       },
+      // --- start LOGIN PAGE---
+      // Remove login accordion style
+      '.card.card-primary.panel.panel-default': el => {
+        el.classList.add('border-0')
+       },
+      '.card-header.panel-heading': el => {
+        el.classList.add('border-0','bg-none')
+       },       
+      // --- end LOGIN PAGE---
+
       // --- start SITE VIEW---
       // Standardize form buttons style
       '.form-control': el => {
