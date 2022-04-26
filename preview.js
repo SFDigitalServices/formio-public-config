@@ -82,7 +82,7 @@
       el.classList.remove('col-sm-4')
         el.classList.add('col-sm-6', 'flex', 'justify-end')
       },
-      // change "Edit Data" button text to "Preview"
+      // Change "Edit Data" button text to "Preview"
       '.form-btn.form-btn-use': el => {
         el.textContent = 'Preview'
       },
@@ -109,7 +109,15 @@
       },     
       '.page-num': el => {
         el.classList.add('text-slate-2','text-body','font-medium')
-      },       
+      },
+      // Updates pagination active style
+      'li.pagination-page.page-item.active .page-link': el => {
+        el.classList.add('text-slate-4', 'text-body', 'font-medium', 'border-0', 'bg-none', 'my-4', 'mx-20')
+      },  
+      // Updates pagination disabled style
+       'li.pagination-page.page-item.disabled .page-link': el => {
+        el.classList.add('text-action', 'text-body', 'font-medium', 'border-3', 'border-action', 'rounded-lg', 'px-3')
+      },              
       // --- end ALL FORMS VIEW---
 
       // --- start EDIT FORM VIEW---      
