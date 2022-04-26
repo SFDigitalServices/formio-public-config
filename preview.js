@@ -114,10 +114,14 @@
       'li.pagination-page.page-item.active .page-link': el => {
         el.classList.add('text-slate-4', 'text-body', 'font-medium', 'border-0', 'bg-none', 'my-4', 'mx-20')
       },  
-      // Updates pagination disabled style
-       'li.pagination-page.page-item.disabled .page-link': el => {
+      // Updates pagination prev disabled style
+      'li.pagination-prev.page-item.disabled .page-link': el => {
         el.classList.add('text-action', 'text-body', 'font-medium', 'border-3', 'border-action', 'rounded-lg', 'px-3')
-      },              
+      },     
+      // Updates pagination next disabled style
+      'li.pagination-next.page-item.disabled .page-link': el => {
+        el.classList.add('text-action', 'text-body', 'font-medium', 'border-3', 'border-action', 'rounded-lg', 'px-3')
+      },                 
       // --- end ALL FORMS VIEW---
 
       // --- start EDIT FORM VIEW---      
