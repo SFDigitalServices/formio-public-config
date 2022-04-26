@@ -38,14 +38,14 @@
         a.setAttribute('data-moved', true)
       },
       // --- start LOGIN PAGE---
-      // Remove login accordion style
+      // Removes login accordion style
       '.card.card-primary.panel.panel-default': el => {
        el.classList.add('border-0')
       },
       '.card-header.panel-heading': el => {
        el.classList.add('border-0','bg-none')
       }, 
-      // Disable the login button nav item       
+      // Disables the login button nav item       
       'a[routerlink=login]': el => {
        el.classList.remove('rounded-0', 'border-t-0', 'border-l-0', 'border-r-0', 'bg-slate-1', 'text-body', 'text-slate-3', 'font-medium', 'border-slate-2', 'border-b-4')
         el.classList.add('border-0', 'p-0', 'text-title-xl-desktop', 'text-black')
@@ -53,22 +53,22 @@
       // --- end LOGIN PAGE---
 
       // --- start SITE VIEW---
-      // Standardize form buttons style
+      // Standardizes form buttons style
       '.form-control': el => {
        el.classList.add('h-44', 'bg-slate-1', 'rounded-lg', 'border-0')
       },
-      // Standardize choice input style
+      // Standardizes choice input style
       '.formio-component-multiple .choices__input': el => {
         el.classList.add('bg-slate-1')
       },
       // --- end SITE VIEW---
 
       // --- start ALL FORMS VIEW---
-      // Add spacing above the table
+      // Adds spacing above the table
       '.input-group': el => {
        el.classList.add('mb-5')
       },
-      // Update the form header style
+      // Updates the form header style
       'th': el => {
        el.classList.add('bg-slate-3', 'text-small', 'text-white', 'border-b-0', 'px-16', 'py-8')
       },
@@ -82,7 +82,7 @@
       el.classList.remove('col-sm-4')
         el.classList.add('col-sm-6', 'flex', 'justify-end')
       },
-      // Change "Edit Data" button text to "Preview"
+      // Changes "Edit Data" button text to "Preview"
       '.form-btn.form-btn-use': el => {
         el.textContent = 'Preview'
       },
@@ -110,6 +110,10 @@
       '.page-num': el => {
         el.classList.add('text-slate-2','text-body','font-medium')
       },
+      // Adds pagination margin 
+      'ul.pagination.justify-content-center.pagination-sm': el => {
+        el.classList.add('mt-80')
+      },  
       // Updates pagination active style
       'li.pagination-page.page-item.active .page-link': el => {
         el.classList.add('text-slate-4', 'text-body', 'font-medium', 'border-0', 'bg-none', 'my-4', 'mx-20')
@@ -143,11 +147,11 @@
         el.classList.remove('bg-slate-1', 'border-slate-2', 'border-b-4')
         el.classList.add('bg-none', 'text-body', 'text-slate-3', 'font-medium', 'border-grey-3', 'border-b-2')
       }, 
-      // Increase form group margin bottom  
+      // Increases form group margin bottom  
       '.form-group': el => {
         el.classList.add('mb-40')
       }, 
-      // Increase sidebar spacing
+      // Increases sidebar spacing
       '.card.form-builder-panel': el => {
         el.classList.add('mb-8')
       },
@@ -191,32 +195,32 @@
           icon.nextSibling.textContent = 'Add new page'
         } 
       },  
-      // Update editor area card style
+      // Updates editor area card style
       '.builder-component .card': el => {
         el.classList.remove('border')
         el.classList.add('border-0')
       },  
-      // Update editor area card header style
+      // Updates editor area card header style
       '.builder-component .card-header': el => {
         el.classList.remove('bg-default')  
         el.classList.add('bg-white', 'border-dashed','border-grey-4', 'border-1','rounded-0','border-0')
       },     
-      // Update editor area component border style
+      // Updates editor area component border style
       '.formbuilder .formio-component-content': el => {
        el.classList.add('border-dashed','border-grey-4', 'border-1')
       },        
-      // Enlarge editor area page title
+      // Enlarges editor area page title
       '.card-title': el => {
         el.classList.add('text-title-xl', 'text-slate-4')
       }, 
       // ---end EDIT FORM VIEW---
 
-      // Replace trash icons with the text "Delete"
+      // Replaces trash icons with the text "Delete"
       '.fa-trash': el => {
         el.parentNode.appendChild(document.createTextNode('Delete'))
         el.classList.remove('fa-trash')
       },
-      // Remove FontAwesome (.fa) icons in specific places
+      // Removes FontAwesome (.fa) icons in specific places
       'table .fa, .nav-link .fa, .fa-share-alt': el => {
         el.classList.remove('fa')
         el.remove()
