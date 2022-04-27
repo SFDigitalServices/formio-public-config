@@ -136,7 +136,9 @@
       }, 
       // Updates nav link style
       '.nav-link': el => {
-        if (el.getAttribute('routerlink') !== 'login') {
+        const login = el.matches('[routerlink=login]')
+        console.log('nav-link:', el, 'login:', login)
+        if (!login) {
           el.classList.add('rounded-0', 'bg-none', 'border-grey-3', 'border-b-2', 'border-t-0', 'border-l-0', 'border-r-0')
         }
       },                
