@@ -136,7 +136,7 @@
       }, 
       // Updates nav link style
       '.nav-link': el => {
-        if (!el.match('[routerlink=login]') {
+        if (!el.match('[routerlink=login]')) {
           el.classList.add('rounded-0', 'bg-none', 'border-grey-3', 'border-b-2', 'border-t-0', 'border-l-0', 'border-r-0')
         }
       },                
