@@ -20,7 +20,7 @@
       },
       'app-form h2': el => {
         el.classList.remove('mb-3')
-        el.classList.add('text-display-lg', 'mb-80')
+        el.classList.add('display-sm', 'mb-80')
       },
       'app-form .nav-link[routerlink="../"]': el => {
         if (el.hidden) return
