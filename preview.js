@@ -143,19 +143,20 @@
         el.classList.add('text-slate-4', 'no-underline')
       },  
       // Updates pagination prev style
-      'li.pagination-prev.page-item .page-link': el => {
-        el.classList.add('text-action', 'text-body', 'font-medium', 'border-3', 'border-action', 'rounded-lg', 'px-3')
+      'li.pagination-prev.page-item.disabled .page-link': el => {
+        el.classList.add('text-action', 'text-body', 'font-medium', 'border-3', 'border-action', 'rounded-lg', 'px-3', 'mr-16')
       },     
       // Updates pagination next style
-      'li.pagination-next.page-item .page-link': el => {
-        el.classList.add('text-action', 'text-body', 'font-medium', 'border-3', 'border-action', 'rounded-lg', 'px-3')
+      'li.pagination-next.page-item.disabled .page-link': el => {
+        el.classList.add('text-action', 'text-body', 'font-medium', 'border-3', 'border-action', 'rounded-lg', 'px-3', 'ml-16')
       },
-      /*
       // Updates pagination disabled style
-      'li.page-item.disabled .page-link': el => {
+      'li.pagination-prev.page-item.disabled .page-link': el => {
         el.classList.add('hidden')
-      },
-      */
+      }, 
+      'li.pagination-next.page-item.disabled .page-link': el => {
+        el.classList.add('hidden')
+      },                      
       // --- end ALL FORMS VIEW---
   
       // --- start EDIT FORM VIEW---      
