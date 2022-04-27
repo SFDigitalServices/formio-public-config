@@ -15,7 +15,7 @@
         el.lastChild.nodeValue = 'Preview'
       },
       '.navbar-brand': el => {
-        el.classList.replace('navbar-brand', 'text-big-desc')
+        el.classList.replace('navbar-brand', 'big-desc')
         el.classList.add('text-inherit')
       },
       'app-form h2': el => {
@@ -28,7 +28,7 @@
         link.classList.remove('nav-link')
         link.classList.add('block', 'mb-8')
         link.textContent = 'Back to all forms'
-        const title = document.querySelector('h2.text-display-lg')
+        const title = document.querySelector('h2.display-lg')
         title?.parentNode.insertBefore(link, title)
         el.hidden = true
       },
@@ -49,7 +49,7 @@
       'a[routerlink=login]': el => {
         // no pointer cursor
         el.style.cursor = 'default'
-        el.classList.add('border-0', 'p-0', 'text-title-xl', 'text-black')
+        el.classList.add('border-0', 'p-0', 'title-xl', 'text-black')
       },       
       // --- end LOGIN PAGE---
 
@@ -71,7 +71,7 @@
       },
       // Updates the form header style
       'th': el => {
-       el.classList.add('bg-slate-3', 'text-small', 'text-white', 'border-b-0', 'px-16', 'py-8')
+       el.classList.add('bg-slate-3', 'small', 'text-white', 'border-b-0', 'px-16', 'py-8')
       },
       // Narrows the form title container width
       'td .row .col-sm-8': el => {
@@ -179,17 +179,17 @@
       // Updates active page breadcrumb style
       '.badge-primary': el => {
         el.classList.remove('mr-2')  
-        el.classList.add('bg-none', 'text-small', 'text-slate-4', 'font-medium', 'p-0', 'mb-8')
+        el.classList.add('bg-none', 'small', 'text-slate-4', 'font-medium', 'p-0', 'mb-8')
       },   
       // Updates inactive page breadcrumb style
       '.badge-info': el => {
         el.classList.remove('mr-2')  
-        el.classList.add('bg-none', 'text-small', 'text-action', 'font-regular', 'underline', 'p-0', 'mb-8')
+        el.classList.add('bg-none', 'small', 'text-action', 'font-regular', 'underline', 'p-0', 'mb-8')
       },
       // Updates add page breadcrumb style
       '[ref="addPage"]': el => {
         el.classList.remove('mr-2')
-        el.classList.add('bg-slate-3', 'text-small', 'text-white', 'font-semibold', 'rounded-sm', 'block', 'mt-16', 'm-0', 'p-8')
+        el.classList.add('bg-slate-3', 'small', 'text-white', 'font-semibold', 'rounded-sm', 'block', 'mt-16', 'm-0', 'p-8')
         const icon = el.querySelector('i')
         if (icon) {
           icon.classList.add('mr-4')
@@ -212,7 +212,7 @@
       },        
       // Enlarges editor area page title
       '.card-title': el => {
-        el.classList.add('text-title-xl', 'text-slate-4')
+        el.classList.add('title-xl', 'text-slate-4')
       }, 
       // ---end EDIT FORM VIEW---
 
