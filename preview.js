@@ -136,11 +136,11 @@
       
       // Updates pagination inactive style
       'li.pagination-page.page-item .page-link': el => {
-        el.classList.add('text-action', 'text-body', 'font-medium', 'underline', 'border-0', 'bg-none', 'my-4', 'mx-20')
+        el.classList.add('text-body', 'font-medium', 'text-action', 'underline', 'border-0', 'bg-none', 'my-4', 'mx-20')
       },  
       // Updates pagination active style
       'li.pagination-page.page-item.active .page-link': el => {
-        el.classList.add('text-slate-4', 'text-body', 'font-medium', 'border-0', 'bg-none', 'my-4', 'mx-20')
+        el.classList.add('text-slate-4', 'no-underline')
       },  
       // Updates pagination prev disabled style
       'li.pagination-prev.page-item.disabled .page-link': el => {
