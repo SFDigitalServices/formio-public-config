@@ -49,7 +49,7 @@
       'a[routerlink=login]': el => {
         // no pointer cursor
         el.style.cursor = 'default'
-        el.classList.add('border-0', 'p-0', 'title-xl', 'text-black')
+        el.classList.add('border-0', 'p-0', 'display-lg', 'text-black')
       },       
       // --- end LOGIN PAGE---
 
