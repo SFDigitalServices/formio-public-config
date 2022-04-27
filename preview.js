@@ -6,8 +6,8 @@
   loadStylesheet('https://unpkg.com/sfgov-design-system@2.2.0/dist/css/sfds.css')
 
   document.body.classList.add('font-rubik')
-  const header = document.querySelector('header')
-  header?.classList.add('py-28', 'mb-96')
+  const heading = document.querySelector('header')
+  heading?.classList.add('py-28', 'mb-96')
 
   const observer = observe({
     '.formio-form': hijackForm,
@@ -17,6 +17,17 @@
     '.container-demo': el => {
       const login = el.querySelector('app-auth')
       classify(el, login, ['w-auto', 'lg:w-2/3', 'xl:w-1/3'])
+      
+      // add the "All forms" heading if the "grid" is visible
+      if (el.querySelector('formio-grid')) {
+        const title = document.createElement('h1')
+        title.classList.add('display-lg', 'mb-80')
+        title.setAttribute('data-role', 'heading-all-forms')
+        title.textContent = 'All forms'
+        el.insertBefore(title, el.firstChild)
+      } else {
+        el.querySelector('[data-role=heading-all-forms]')?.remove()
+      }
     },
     '.navbar-brand': el => {
       el.classList.replace('navbar-brand', 'big-desc')
@@ -25,7 +36,7 @@
     'app-form h2': el => {
       el.classList.remove('mb-3')
       el.classList.add('display-sm', 'mb-80')
-      el.setAttribute('data-role', 'form-header')
+      el.setAttribute('data-role', 'form-heading')
     },
     'app-form .nav-link[routerlink="../"]': el => {
       if (el.hidden) return
@@ -33,8 +44,8 @@
       link.classList.remove('nav-link')
       link.classList.add('block', 'mb-8')
       link.textContent = 'Back to all forms'
-      const title = document.querySelector('[data-role=form-header]')
-      if (!title) console.warn('no [data-role=form-header]!')
+      const title = document.querySelector('[data-role=form-heading]')
+      if (!title) console.warn('no [data-role=form-heading]!')
       title?.parentNode.insertBefore(link, title)
       el.hidden = true
     },
