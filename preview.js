@@ -225,10 +225,11 @@
         el.classList.remove('fa')
         el.remove()
       },
+      // Updates sidebar folder buttons style      
       '.nav.mb-2': el => el.classList.replace('mb-2', 'mb-20'),
       '.builder-group-button': el => {
         el.classList.remove('builder-group-button')
-        el.classList.add('bg-grey-2', 'text-black', 'text-left', 'p-8')
+        el.classList.add('bg-grey-2', 'text-black', 'text-left', 'p-8', 'block', 'rounded-0')
       }
     })
   
