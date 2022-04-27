@@ -132,7 +132,8 @@
     // Adds pagination margin 
     'ul.pagination.justify-content-center.pagination-sm': el => {
       el.classList.add('mt-80')
-    },  
+    },
+    
     // Updates pagination active style
     'li.pagination-page.page-item.active .page-link': el => {
       el.classList.add('text-slate-4', 'text-body', 'font-medium', 'border-0', 'bg-none', 'my-4', 'mx-20')
@@ -151,21 +152,24 @@
     // Updates nav tabs style
     '.nav-tabs': el => {
       el.classList.add('mb-40', 'border-0')
-    }, 
+    },
+    
     // Updates nav link style
     '.nav-link:not([routerlink=login])': el => {
-      el.classList.add('rounded-0', 'bg-none', 'border-grey-3', 'border-b-2', 'border-t-0', 'border-l-0', 'border-r-0')
+      // all nav links get these classes
+      el.classList.add(
+        'text-body', 'text-slate-3', 'font-medium',
+        'rounded-0', 'bg-none', 'border-grey-3', 'border-b-2', 'border-t-0', 'border-l-0', 'border-r-0'
+      )
+      classify(el, el.matches('.active'), [
+        // only active links get these, and not inactive
+        'bg-slate-1', 'border-slate-2', 'border-b-4'
+      ], [
+        // inactive links get these, and not active classes
+        'bg-none', 'border-grey-3', 'border-b-2'
+      ])
     },                
-    // Updates nav active link style
-    '.nav-link.active:not([routerlink=login])': el => {
-      el.classList.remove('bg-none', 'border-grey-3', 'border-b-2')
-      el.classList.add('bg-slate-1', 'text-body', 'text-slate-3', 'font-medium', 'border-slate-2', 'border-b-4')
-    }, 
-    // Updates nav *inactive* link style
-    '.nav-link:not(.active):not([routerlink=login])': el => {
-      el.classList.remove('bg-slate-1', 'border-slate-2', 'border-b-4')
-      el.classList.add('bg-none', 'text-body', 'text-slate-3', 'font-medium', 'border-grey-3', 'border-b-2')
-    }, 
+
     // Increases form group margin bottom  
     '.form-group': el => {
       el.classList.add('mb-40')
