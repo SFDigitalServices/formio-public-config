@@ -135,20 +135,16 @@
         el.classList.add('mb-40', 'border-0')
       }, 
       // Updates nav link style
-      '.nav-link': el => {
-        const login = el.matches('[routerlink=login]')
-        console.log('nav-link:', el, 'login:', login)
-        if (!login) {
-          el.classList.add('rounded-0', 'bg-none', 'border-grey-3', 'border-b-2', 'border-t-0', 'border-l-0', 'border-r-0')
-        }
+      '.nav-link:not([routerlink=login])': el => {
+        el.classList.add('rounded-0', 'bg-none', 'border-grey-3', 'border-b-2', 'border-t-0', 'border-l-0', 'border-r-0')
       },                
       // Updates nav active link style
-      '.nav-link.active': el => {
+      '.nav-link.active:not([routerlink=login])': el => {
         el.classList.remove('bg-none', 'border-grey-3', 'border-b-2')
         el.classList.add('bg-slate-1', 'text-body', 'text-slate-3', 'font-medium', 'border-slate-2', 'border-b-4')
       }, 
       // Updates nav *inactive* link style
-      '.nav-link:not(.active)': el => {
+      '.nav-link:not(.active):not([routerlink=login])': el => {
         el.classList.remove('bg-slate-1', 'border-slate-2', 'border-b-4')
         el.classList.add('bg-none', 'text-body', 'text-slate-3', 'font-medium', 'border-grey-3', 'border-b-2')
       }, 
