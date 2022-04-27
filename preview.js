@@ -25,6 +25,7 @@
     'app-form h2': el => {
       el.classList.remove('mb-3')
       el.classList.add('display-sm', 'mb-80')
+      el.setAttribute('data-role', 'form-header')
     },
     'app-form .nav-link[routerlink="../"]': el => {
       if (el.hidden) return
@@ -32,7 +33,8 @@
       link.classList.remove('nav-link')
       link.classList.add('block', 'mb-8')
       link.textContent = 'Back to all forms'
-      const title = document.querySelector('h2.display-lg')
+      const title = document.querySelector('[data-role=form-header]')
+      if (!title) console.warn('no [data-role=form-header]!')
       title?.parentNode.insertBefore(link, title)
       el.hidden = true
     },
