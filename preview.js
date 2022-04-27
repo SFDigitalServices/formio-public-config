@@ -149,14 +149,7 @@
       // Updates pagination next style
       'li.pagination-next.page-item.disabled .page-link': el => {
         el.classList.add('text-action', 'text-body', 'font-medium', 'border-3', 'border-action', 'rounded-lg', 'px-3', 'ml-16')
-      },
-      // Updates pagination disabled style
-      'li.pagination-prev.page-item.disabled .page-link': el => {
-        el.classList.add('hidden')
-      }, 
-      'li.pagination-next.page-item.disabled .page-link': el => {
-        el.classList.add('hidden')
-      },                      
+      },              
       // --- end ALL FORMS VIEW---
   
       // --- start EDIT FORM VIEW---      
