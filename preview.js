@@ -144,11 +144,11 @@
       },  
       // Updates pagination prev style
       'li.pagination-prev.page-item.disabled .page-link': el => {
-        el.classList.add('text-action', 'text-body', 'font-medium', 'border-3', 'border-action', 'rounded-lg', 'px-3', 'mr-16')
+        el.classList.add('text-action', 'text-body', 'font-medium', 'border-3', 'border-action', 'rounded-lg', 'px-3', 'mr-16', 'hocus:bg-blue-dark', 'hocus:text-white', 'hocus:border-blue-dark')
       },     
       // Updates pagination next style
       'li.pagination-next.page-item.disabled .page-link': el => {
-        el.classList.add('text-action', 'text-body', 'font-medium', 'border-3', 'border-action', 'rounded-lg', 'px-3', 'ml-16')
+        el.classList.add('text-action', 'text-body', 'font-medium', 'border-3', 'border-action', 'rounded-lg', 'px-3', 'ml-16', 'hocus:bg-blue-dark', 'hocus:text-white', 'hocus:border-blue-dark')
       },              
       // --- end ALL FORMS VIEW---
   
