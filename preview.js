@@ -15,14 +15,8 @@
       el.lastChild.nodeValue = 'Preview'
     },
     '.container-demo': el => {
-      el.classList.add('border-solid', 'border-2')
-      if (el.querySelector('app-auth')) {
-        el.classList.remove('border-yellow-2')
-        el.classList.add('border-red-2')
-      } else {
-        el.classList.remove('border-red-2')
-        el.classList.add('border-yellow-2')
-      }
+      const login = el.querySelector('app-auth')
+      classify(el, login, ['w-auto', 'lg:w-2/3', 'xl:w-1/3'])
     },
     '.navbar-brand': el => {
       el.classList.replace('navbar-brand', 'big-desc')
@@ -330,6 +324,16 @@
         }
       }
     })
+  }
+  
+  function classify (el, condition, passClasses, failClasses = []) {
+    if (condition) {
+      el.classList.add(...passClasses)
+      el.classList.remove(...failClasses)
+    } else {
+      el.classList.remove(...passClasses)
+      el.classList.add(...failClasses)
+    }
   }
 
 })()
