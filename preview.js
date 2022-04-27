@@ -151,11 +151,11 @@
       '.form-group': el => {
         el.classList.add('mb-40')
       }, 
-      // Increases sidebar spacing
-      '.card.form-builder-panel': el => {
-        el.classList.add('mb-8')
-      },
       // Updates sidebar folder style
+      '.card.form-builder-panel': el => {
+        el.classList.add('border-2', 'border-grey-4', 'mb-8')
+      },
+      // Updates sidebar folder header style
       '.card-header.form-builder-group-header': el => {
         el.classList.add('border-0')
       },      
