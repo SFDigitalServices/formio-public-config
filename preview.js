@@ -17,18 +17,18 @@
     '.container-demo': el => {
       const login = el.querySelector('app-auth')
       classify(el, login, ['w-auto', 'lg:w-2/3', 'xl:w-1/3'])
-      /*
       // add the "All forms" heading if the "grid" is visible
       if (el.querySelector('formio-grid')) {
-        const title = document.createElement('h1')
-        title.classList.add('display-lg', 'mb-80')
-        title.setAttribute('data-role', 'heading-all-forms')
-        title.textContent = 'All forms'
-        el.insertBefore(title, el.firstChild)
+        if (!el.querySelector('[data-role=heading-all-forms]')) {
+          const title = document.createElement('h1')
+          title.classList.add('display-lg', 'mb-80')
+          title.setAttribute('data-role', 'heading-all-forms')
+          title.textContent = 'All forms'
+          el.insertBefore(title, el.firstChild)
+        }
       } else {
         el.querySelector('[data-role=heading-all-forms]')?.remove()
       }
-      */
     },
     '.navbar-brand': el => {
       el.classList.replace('navbar-brand', 'big-desc')
