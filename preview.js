@@ -47,8 +47,9 @@
       }, 
       // Disables the login button nav item       
       'a[routerlink=login]': el => {
-       el.classList.remove('rounded-0', 'border-t-0', 'border-l-0', 'border-r-0', 'bg-slate-1', 'text-body', 'text-slate-3', 'font-medium', 'border-slate-2', 'border-b-4')
-        el.classList.add('border-0', 'p-0', 'text-title-xl-desktop', 'text-black')
+        // no pointer cursor
+        el.style.cursor = 'default'
+        el.classList.add('border-0', 'p-0', 'text-title-xl', 'text-black')
       },       
       // --- end LOGIN PAGE---
 
@@ -135,7 +136,9 @@
       }, 
       // Updates nav link style
       '.nav-link': el => {
-        el.classList.add('rounded-0', 'bg-none', 'border-grey-3', 'border-b-2', 'border-t-0', 'border-l-0', 'border-r-0')
+        if (!el.match('[routerlink=login]') {
+          el.classList.add('rounded-0', 'bg-none', 'border-grey-3', 'border-b-2', 'border-t-0', 'border-l-0', 'border-r-0')
+        }
       },                
       // Updates nav active link style
       '.nav-link.active': el => {
