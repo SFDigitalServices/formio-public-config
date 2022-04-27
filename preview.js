@@ -1,4 +1,4 @@
-\// form preview javascript
+// form preview javascript
 (() => {
     console.log('[sfds] preview')
   
