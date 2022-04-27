@@ -136,20 +136,24 @@
       
       // Updates pagination inactive style
       'li.pagination-page.page-item .page-link': el => {
-        el.classList.add('text-body', 'font-medium', 'text-action', 'underline', 'border-0', 'bg-none', 'my-4', 'mx-20')
+        el.classList.add('text-action', 'text-body', 'font-medium', 'underline', 'border-0', 'bg-none', 'my-4', 'mx-8')
       },  
       // Updates pagination active style
       'li.pagination-page.page-item.active .page-link': el => {
         el.classList.add('text-slate-4', 'no-underline')
       },  
-      // Updates pagination prev disabled style
+      // Updates pagination prev style
       'li.pagination-prev.page-item.disabled .page-link': el => {
-        el.classList.add('hidden')
+        el.classList.add('text-action', 'text-body', 'font-medium', 'border-3', 'border-action', 'rounded-lg', 'px-3')
       },     
-      // Updates pagination next disabled style
+      // Updates pagination next style
       'li.pagination-next.page-item.disabled .page-link': el => {
         el.classList.add('text-action', 'text-body', 'font-medium', 'border-3', 'border-action', 'rounded-lg', 'px-3')
-      },                 
+      },  
+      // Updates pagination disabled style
+      'li.page-item.disabled .page-link': el => {
+        el.classList.add('hidden')
+      },                      
       // --- end ALL FORMS VIEW---
   
       // --- start EDIT FORM VIEW---      
