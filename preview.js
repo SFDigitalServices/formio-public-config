@@ -185,7 +185,11 @@
       // Updates sidebar folder header style
       '.card-header.form-builder-group-header': el => {
         el.classList.add('border-0')
-      },      
+      },   
+      // Updates sidebar folder show style 
+      '[ref="sidebar-container"]': el => {
+        el.classList.add('p-8')
+      },        
       // Updates sidebar button style
       '.formcomponent.drag-copy': el => {
         el.classList.add('bg-slate-3', 'text-white', 'items-baseline','justify-start')
