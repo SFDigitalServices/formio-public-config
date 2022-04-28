@@ -192,7 +192,7 @@
       },        
       // Updates sidebar button style
       '.formcomponent.drag-copy': el => {
-        el.classList.add('bg-slate-3', 'text-white', 'items-baseline','justify-start')
+        el.classList.add('bg-slate-3', 'text-white', 'items-baseline', 'justify-start', 'mt-4')
       },
       // Updates form area layout
       '.formarea': el => {
