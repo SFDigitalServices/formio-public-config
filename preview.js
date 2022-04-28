@@ -80,10 +80,12 @@
       '.formio-component-multiple .choices__input': el => {
         el.classList.add('bg-slate-1')
       },
+      /*
       // Updates the login authentication style        
       'a[routerlink=auth]': el => {
        el.classList.add('text-action')
-      },  
+      },
+      */
       // --- end SITE VIEW---
   
       // --- start ALL FORMS VIEW---
