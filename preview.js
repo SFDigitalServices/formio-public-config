@@ -85,7 +85,7 @@
       // --- start ALL FORMS VIEW---
       // Adds spacing above the table
       '.input-group': el => {
-       el.classList.add('mb-5')
+       el.classList.add('mb-28')
       },
       // Updates the form header style
       'th': el => {
