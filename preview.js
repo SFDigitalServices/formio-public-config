@@ -142,6 +142,13 @@
       'li.pagination-page.page-item.active .page-link': el => {
         el.classList.add('text-slate-4', 'no-underline')
       },  
+      // Hide pagination disabled style
+      'li.pagination-prev.page-item.disabled .page-link': el => {
+        el.classList.add('hidden')
+      },    
+      'li.pagination-next.page-item.disabled .page-link': el => {
+        el.classList.add('hidden')
+      },   
       // Updates pagination prev style
       'li.pagination-prev.page-item .page-link': el => {
         el.classList.add('text-action', 'text-body', 'font-medium', 'border-3', 'border-action', 'rounded-lg', 'px-3', 'mr-16', 'hocus:bg-blue-dark', 'hocus:text-white', 'hocus:border-blue-dark')
@@ -150,13 +157,6 @@
       'li.pagination-next.page-item .page-link': el => {
         el.classList.add('text-action', 'text-body', 'font-medium', 'border-3', 'border-action', 'rounded-lg', 'px-3', 'ml-16', 'hocus:bg-blue-dark', 'hocus:text-white', 'hocus:border-blue-dark')
       },    
-      // Hide pagination disabled style
-      'li.pagination-prev.page-item.disabled .page-link': el => {
-        el.classList.add('hidden')
-      },    
-      'li.pagination-next.page-item.disabled .page-link': el => {
-        el.classList.add('hidden')
-      }, 
       // --- end ALL FORMS VIEW---
   
       // --- start EDIT FORM VIEW---      
