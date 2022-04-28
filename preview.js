@@ -78,8 +78,12 @@
       },
       // Standardizes choice input style
       '.formio-component-multiple .choices__input': el => {
-        el.classList.add('bg-slate-1')
+       el.classList.add('bg-slate-1')
       },
+      // Removes the Forms link in header        
+      'a[routerlink=/form]': el => {
+       el.classList.add('hidden')
+      },  
       /*
       // Updates the login authentication style        
       'a[routerlink=auth]': el => {
