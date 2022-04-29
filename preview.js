@@ -229,7 +229,7 @@
       // Updates inactive page breadcrumb style
       '.badge-info': el => {
         el.classList.remove('mr-2')  
-        el.classList.add('bg-none', 'small', 'text-action', 'font-regular', 'underline', 'p-0', 'mb-8')
+        el.classList.add('bg-none', 'small', 'text-action', 'font-regular', 'underline', 'p-0', 'mb-16')
       },
       // Updates add page breadcrumb style
       '[ref="addPage"]': el => {
