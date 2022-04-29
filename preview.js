@@ -277,6 +277,10 @@
         el.classList.remove('builder-group-button')
         el.classList.add('bg-grey-2', 'text-black', 'text-left', 'p-8', 'block', 'rounded-0')
       }
+      // Updates sidebar subfolder buttons style      
+      '.div#group-container-resource button': el => {
+        el.classList.add('text-small')
+      }        
     })
   
     observer.observe(document.body, { childList: true, subtree: true })
