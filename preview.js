@@ -211,7 +211,7 @@
       },
       // Updates form area layout
       '.formarea': el => {
-        el.classList.add('flex')
+        el.classList.add('flex', 'mb-20')
       }, 
       // Updates builder component drag container style
       '[ref="-container"]': el => {
