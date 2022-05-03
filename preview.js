@@ -229,12 +229,12 @@
       // Updates inactive page breadcrumb style
       '.wizard-page-label': el => {
         el.classList.remove('mr-2', 'badge', 'badge-info')  
-        el.classList.add('block', 'bg-none', 'small', 'text-action', 'font-regular', 'underline', 'p-0', 'mb-20', 'leading-snug', 'hocus: bg-slate-4')
+        el.classList.add('block', 'bg-none', 'small', 'text-action', 'font-regular', 'underline', 'p-0', 'mb-20', 'leading-snug')
       },
       // Updates add page breadcrumb style
       '[ref="addPage"]': el => {
-        el.classList.remove('mr-2', 'text-action', 'p-0', 'underline')
-        el.classList.add('bg-slate-3', 'small', 'text-white', 'font-semibold', 'rounded-sm', 'block', 'mt-16', 'm-0', 'p-8', 'text-center', 'hocus: bg-slate-4')
+        el.classList.remove('mr-2')
+        el.classList.add('bg-slate-3', 'small', 'text-white', 'font-semibold', 'rounded-sm', 'block', 'mt-16', 'm-0', 'p-8', 'text-center')
         const icon = el.querySelector('i')
         if (icon) {
           icon.classList.add('mr-4')
