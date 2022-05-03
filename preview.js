@@ -244,7 +244,7 @@
         
       // Adds a background grey to the editor
         '[ref="form"]': el => {
-        el.classList.add('bg-grey-1')
+        el.classList.add('bg-grey-1', 'w-3/5')
         },
       // Updates editor area card style
       '.builder-component .card': el => {
