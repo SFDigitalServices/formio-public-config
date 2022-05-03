@@ -222,14 +222,14 @@
         el.classList.add('flex-col', 'order-2', 'w-1\/4', 'bg-grey-1', 'inline', 'rounded-0', 'p-28', 'm-0')
       }, 
       // Updates active page breadcrumb style
-      '.badge-primary': el => {
-        el.classList.remove('mr-2', 'badge', 'badge-info')  
-        el.classList.add('block', 'bg-none', 'small', 'text-slate-4', 'font-medium', 'p-0', 'mb-20', 'leading-snug')
+      '.badge-primary .wizard-page-label': el => {
+        el.classList.remove('mr-2', 'badge', 'badge-info', 'text-action', 'font-normal', 'underline')  
+        el.classList.add('block', 'bg-none', 'small', 'text-slate-4', 'font-medium', 'no-underline', 'p-0', 'mb-20', 'leading-snug')
       },   
       // Updates inactive page breadcrumb style
       '.wizard-page-label': el => {
         el.classList.remove('mr-2', 'badge', 'badge-info')  
-        el.classList.add('block', 'bg-none', 'small', 'text-action', 'font-medium', 'no-underline', 'p-0', 'mb-20', 'leading-snug')
+        el.classList.add('block', 'bg-none', 'small', 'text-action', 'font-normal', 'underline', 'p-0', 'mb-20', 'leading-snug')
       },
       // Updates add page breadcrumb style
       '[ref="addPage"]': el => {
