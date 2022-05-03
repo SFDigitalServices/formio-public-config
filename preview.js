@@ -219,7 +219,7 @@
       },        
       // Updates page breadcrumb background style
       '.breadcrumb': el => {
-        el.classList.add('flex-col', 'order-2', 'w-2/5', 'bg-grey-1', 'inline', 'rounded-0', 'p-28', 'm-0')
+        el.classList.add('flex-col', 'order-2', 'w-1\/4', 'bg-grey-1', 'inline', 'rounded-0', 'p-28', 'm-0')
       }, 
       // Updates active page breadcrumb style
       '.badge-primary': el => {
@@ -244,7 +244,7 @@
         
       // Adds a background grey to the editor
         '[ref="form"]': el => {
-        el.classList.add('bg-grey-1', 'w-2\/3')
+        el.classList.add('bg-grey-1', 'w-3\/4')
         },
       // Updates editor area card style
       '.builder-component .card': el => {
