@@ -222,7 +222,7 @@
         el.classList.add('flex-col', 'order-2', 'w-1\/4', 'bg-grey-1', 'inline', 'rounded-0', 'p-28', 'm-0')
       }, 
       // Updates active page breadcrumb style
-      '.badge-primary .wizard-page-label': el => {
+      'span.badge-primary.wizard-page-label': el => {
         el.classList.remove('mr-2', 'badge', 'badge-info', 'text-action', 'font-normal', 'underline')  
         el.classList.add('block', 'bg-none', 'small', 'text-slate-4', 'font-medium', 'no-underline', 'p-0', 'mb-20', 'leading-snug')
       },   
