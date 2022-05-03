@@ -240,7 +240,12 @@
           icon.classList.add('mr-4')
           icon.nextSibling.textContent = 'Add new page'
         } 
-      },  
+      },
+        
+      // Adds a background grey to the editor
+        '[ref="form"]': el => {
+        el.classList.add('bg-grey-1')
+        },
       // Updates editor area card style
       '.builder-component .card': el => {
         el.classList.remove('border')
