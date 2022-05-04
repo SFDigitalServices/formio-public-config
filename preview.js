@@ -232,7 +232,7 @@
         el.classList.add('text-slate-4', 'font-medium', 'no-underline')
       },         
       // Updates add page breadcrumb style
-      '[ref="addPage"]': el => {
+      'span.badge-success.wizard-page-label': el => {
         el.classList.remove('mr-2', 'text-action', 'p-0', 'underline')
         el.classList.add('bg-slate-3', 'small', 'text-white', 'font-semibold', 'rounded-sm', 'block', 'mt-16', 'm-0', 'p-8', 'text-center')
         const icon = el.querySelector('i')
