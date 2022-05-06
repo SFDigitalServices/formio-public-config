@@ -73,8 +73,8 @@
   
       // --- start SITE VIEW---
       // Standardizes form buttons style
-      'input.form-control': el => {
-       el.classList.add('h-44', 'bg-slate-1', 'rounded-lg', 'border-0')
+      '.form-control': el => {
+       el.classList.add('bg-slate-1', 'rounded-lg', 'border-0')
       },
       // Standardizes choice input style
       '.formio-component-multiple .choices__input': el => {
