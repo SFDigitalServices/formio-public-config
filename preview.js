@@ -269,7 +269,7 @@
       // ---start VIEW DATA VIEW--- 
       // Extend table width for header and data
       'div.k-grid th, div.k-grid td': el => {
-        el.classList.add('w-1/4')
+        el.classList.add('w-full')
       },  
       // ---end VIEW DATA VIEW---  
   
