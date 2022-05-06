@@ -265,6 +265,13 @@
         el.classList.add('title-md', 'text-slate-4')
       }, 
       // ---end EDIT FORM VIEW---
+        
+      // ---start VIEW DATA VIEW--- 
+      // Extend table width for header and data
+      'div.k-grid th, div.k-grid td': el => {
+        el.classList.add('w-1/4')
+      },  
+      // ---end VIEW DATA VIEW---  
   
       // Replaces trash icons with the text "Delete"
       '.fa-trash': el => {
