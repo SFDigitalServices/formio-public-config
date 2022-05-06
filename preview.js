@@ -277,7 +277,7 @@
         el.remove()
       },
       // Add style to FontAwesome (.fa) icons 
-      'i.fa': el => {
+      '.builder-sidebar i.fa': el => {
         el.classList.add('mr-8')
       },  
       // Updates sidebar folder buttons style      
