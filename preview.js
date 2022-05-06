@@ -237,7 +237,7 @@
         el.classList.add('bg-slate-3', 'small', 'text-white', 'font-medium', 'rounded-sm', 'block', 'mt-16', 'm-0', 'p-8', 'text-center')
         const icon = el.querySelector('i')
         if (icon) {
-          icon.classList.add('mr-4')
+          icon.classList.add('mr-8')
           icon.nextSibling.textContent = 'Add new page'
         } 
       },
@@ -277,7 +277,7 @@
         el.remove()
       },
       // Add style to FontAwesome (.fa) icons 
-      '.builder-sidebar i.fa,  i.fa.badge-success': el => {
+      '.builder-sidebar i.fa': el => {
         el.classList.add('mr-8')
       },  
       // Updates sidebar folder buttons style      
