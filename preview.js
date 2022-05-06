@@ -299,7 +299,7 @@
       setStyle(iframe, {
         border: 'none',
         width: '100%',
-        height: '750px',
+        height: '850px',
         'overflow-y': 'auto',
         'margin-top': '96px'
       })
