@@ -73,7 +73,7 @@
   
       // --- start SITE VIEW---
       // Standardizes form buttons style
-      '.form-control': el => {
+      'input.form-control': el => {
        el.classList.add('h-44', 'bg-slate-1', 'rounded-lg', 'border-0')
       },
       // Standardizes choice input style
