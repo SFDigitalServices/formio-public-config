@@ -276,6 +276,10 @@
         el.classList.remove('fa')
         el.remove()
       },
+      // Add style to FontAwesome (.fa) icons 
+      'i.fa': el => {
+        el.classList.add('mr-8')
+      },  
       // Updates sidebar folder buttons style      
       '.nav.mb-2': el => el.classList.replace('mb-2', 'mb-20'),
       '.builder-group-button': el => {
