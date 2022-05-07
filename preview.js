@@ -258,7 +258,7 @@
       },     
       // Updates editor area component border style
       '.formbuilder .formio-component-content': el => {
-       el.classList.add('border-dashed','border-grey-4', 'border-1')
+        el.classList.add('border-dashed','border-grey-4', 'border-1')
       },        
       // Enlarges editor area page title
       '.card-title': el => {
@@ -270,6 +270,10 @@
       // Extend table width for header and data
       'div.k-grid th, div.k-grid td': el => {
         el.classList.add('w-sm')
+      },  
+      // Align table header icon 
+      'div.k-grid-header .k-header-column-menu': el => {
+        el.classList.add('items-end')
       },  
       // ---end VIEW DATA VIEW---  
   
