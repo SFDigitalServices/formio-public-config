@@ -100,14 +100,13 @@
       // Narrows the form title container width
       'td .row .col-sm-8': el => {
         el.classList.remove('col-sm-8')
-        el.classList.add('col-sm-6')
-      classify(el, ['w-full'])
+      classify(el, ['w-full', 'lg:col-sm-6'])
       },
       // Widens the button div and adds some formatting
       'td .row .col-sm-4': el => {
       el.classList.remove('col-sm-4')
-        el.classList.add('col-sm-6', 'flex', 'justify-end')
-          classify(el, ['w-full'])
+        el.classList.add('flex', 'justify-end')
+          classify(el, ['w-full', 'lg:col-sm-6'])
       },
       // Changes "Edit Data" button text to "Preview"
       '.form-btn.form-btn-use': el => {
