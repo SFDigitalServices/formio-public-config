@@ -151,7 +151,11 @@
       // Hide pagination disabled style
       'ul.pagination li.page-item.disabled': el => {
         el.classList.add('hidden')
-      },   
+      },
+        // -------- NOT Hide pagination disabled style-----
+      'ul.pagination li.page-item:not[.disabled]': el => {
+        el.classList.remove('hidden')
+      },  
       // Updates pagination prev and next style
       'li.pagination-prev .page-link, li.pagination-next .page-link': el => {
         el.classList.add('text-action', 'text-body', 'font-medium', 'border-3', 'border-action', 'rounded-lg', 'px-3', 'hocus:bg-blue-dark', 'hocus:text-white', 'hocus:border-blue-dark')
