@@ -149,7 +149,7 @@
         el.classList.add('text-slate-4', 'no-underline')
       },  
       // Hide pagination disabled style
-      'li.pagination-page.page-item.disabled': el => {
+      'ul.pagination li.page-item.disabled': el => {
         el.classList.add('hidden')
       },     
       // Updates pagination prev style
