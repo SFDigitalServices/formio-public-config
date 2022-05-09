@@ -153,7 +153,7 @@
         el.classList.add('hidden')
       },
         // ------ NOT Hide pagination disabled style-----
-      'ul.pagination li.page-item:not[.disabled]': el => {
+      'ul.pagination li.page-item:not(.disabled)': el => {
         el.classList.remove('hidden')
       },  
       // Updates pagination prev and next style
