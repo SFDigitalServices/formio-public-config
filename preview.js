@@ -148,12 +148,10 @@
       'li.pagination-page.page-item.active .page-link': el => {
         el.classList.add('text-slate-4', 'no-underline')
       },  
-      /*
       // Hide pagination disabled style
       'ul.pagination li.page-item.disabled': el => {
         el.classList.add('hidden')
-      },  
-      */   
+      },   
       // Updates pagination prev and next style
       'li.pagination-prev .page-link, li.pagination-next .page-link': el => {
         el.classList.add('text-action', 'text-body', 'font-medium', 'border-3', 'border-action', 'rounded-lg', 'px-3', 'hocus:bg-blue-dark', 'hocus:text-white', 'hocus:border-blue-dark')
