@@ -178,9 +178,10 @@
       
       // "Share" button --> "Embed" nav link
       '.pull-right.btn': el => {
-        const li = document.querySelector('app-form > .nav-tabs li').cloneNode()
         if (moveElement(el, 'app-form', 'app-form > ul.nav-tabs', 'li:nth-child(4)')) {
+          el.textContent = 'Embed'
           el.className = ['nav-link', ...navLinkClasses, ...navLinkInactiveClasses].join(' ')
+          const li = document.querySelector('app-form > .nav-tabs li').cloneNode()
           el.parentNode.insertBefore(li, el)
           li.appendChild(el)
         }
@@ -363,7 +364,7 @@
   
     function hijackForm (el) {
       if (!el.closest('app-view')) {
-        console.warn('[sfds] skipping hijack (not contained in <app-view>):', el)
+        console.debug('[sfds] skipping hijack (not contained in <app-view>):', el)
         return
       }
   
