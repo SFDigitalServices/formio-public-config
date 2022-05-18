@@ -179,10 +179,11 @@
       // "Share" button --> "Embed" nav link
       '.pull-right.btn': el => {
         const li = document.querySelector('app-form > .nav-tabs li').cloneNode()
-        moveElement(el, 'app-form', 'app-form > ul.nav-tabs', 'li:nth-child(4)')
-        el.className = [navLinkClasses, ...navLinkInactiveClasses].join(' ')
-        li.insertBefore(el)
-        li.appendChild(el)
+        if (moveElement(el, 'app-form', 'app-form > ul.nav-tabs', 'li:nth-child(4)')) {
+          el.className = [navLinkClasses, ...navLinkInactiveClasses].join(' ')
+          el.parentNode.insertBefore(el, li)
+          li.appendChild(el)
+        }
       },
       
       // --- end ALL FORMS VIEW---
