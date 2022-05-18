@@ -9,6 +9,13 @@
     const heading = document.querySelector('header')
     heading?.classList.add('py-28', 'mb-96')
   
+    const navLinkClasses = [
+      'text-body', 'text-slate-3', 'font-medium',
+      'rounded-0', 'bg-none', 'border-grey-3', 'border-b-2', 'border-t-0', 'border-l-0', 'border-r-0'
+    ]
+    const navLinkActiveClasses = ['bg-slate-1', 'border-slate-2', 'border-b-4']
+    const navLinkInactiveClasses = ['bg-none', 'border-grey-3', 'border-b-2']
+  
     const observer = observe({
       '.formio-form': hijackForm,
       'a[routerlink=view]': el => {
@@ -167,7 +174,15 @@
       // Updates pagination next style
       'li.pagination-next .page-link': el => {
         el.classList.add('ml-16')
-      },   
+      },
+      
+      // "Share" button --> "Embed" nav link
+      '.pull-right.btn': el => {
+        const li = document.querySelector('app-form > .nav-tabs li').cloneNode()
+        li.appendChild(el)
+        moveElement(li, 'app-form', 'app-form > ul.nav-tabs', 'li:nth-child(4)')
+        el.className = [navLinkClasses, ...navLinkInactiveClasses].join(' ')
+      },
       
       // --- end ALL FORMS VIEW---
   
@@ -180,17 +195,8 @@
       // Updates nav link style
       '.nav-link:not([routerlink=login])': el => {
         // all nav links get these classes
-        el.classList.add(
-          'text-body', 'text-slate-3', 'font-medium',
-          'rounded-0', 'bg-none', 'border-grey-3', 'border-b-2', 'border-t-0', 'border-l-0', 'border-r-0'
-        )
-        classify(el, el.matches('.active'), [
-          // only active links get these, and not inactive
-          'bg-slate-1', 'border-slate-2', 'border-b-4'
-        ], [
-          // inactive links get these, and not active classes
-          'bg-none', 'border-grey-3', 'border-b-2'
-        ])
+        el.classList.add(...navLinkClasses)
+        classify(el, el.matches('.active'), navLinkActiveClasses, navLinkInactiveClasses)
       },                
   
       // Increases form group margin bottom  
@@ -398,6 +404,30 @@
       } else {
         el.classList.remove(...passClasses)
         el.classList.add(...failClasses)
+      }
+    }
+    
+    function moveElement (el, fromSelector, toSelector, beforeSelector, wrap) {
+      if (el.closest(fromSelector)) {
+        const newParent = document.querySelector(toSelector)
+        if (!newParent) {
+          console.error('moveElement(): no parent matching "%s"', toSelector)
+          return false
+        }
+        if (beforeSelector) {
+          const before = newParent.querySelector(beforeSelector)
+          if (before) {
+            newParent.insertBefore(el, before)
+            return true
+          } else {
+            console.warn('moveElement(): before selector "%s" not found; appending', beforeSelector)
+          }
+        }
+        newParent.appendChild(el)
+        return true
+      } else {
+        console.warn('moveElement(): not contained in "%s"', fromSelector)
+        return false
       }
     }
   
