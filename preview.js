@@ -180,7 +180,7 @@
       '.pull-right.btn': el => {
         const li = document.querySelector('app-form > .nav-tabs li').cloneNode()
         if (moveElement(el, 'app-form', 'app-form > ul.nav-tabs', 'li:nth-child(4)')) {
-          el.className = [navLinkClasses, navLinkInactiveClasses].flat().join(' ')
+          el.className = ['nav-link', ...navLinkClasses, ...navLinkInactiveClasses].join(' ')
           el.parentNode.insertBefore(li, el)
           li.appendChild(el)
         }
