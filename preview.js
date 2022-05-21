@@ -43,7 +43,7 @@
       },
       'app-form h2': el => {
         el.classList.remove('mb-3')
-        el.classList.add('text-title-xl-desktop', 'font-medium', 'text-slate', 'mb-80')
+        el.classList.add('text-title-xl-desktop', 'font-medium', 'text-slate-4', 'mb-80')
         el.setAttribute('data-role', 'form-heading')
       },
       'app-form .nav-link[routerlink="../"]': el => {
@@ -275,7 +275,7 @@
       },        
       // Enlarges editor area page title
       '.card-title': el => {
-        el.classList.add('title-md', 'text-slate-4')
+        el.classList.add('text-display-sm', 'text-slate-4')
       }, 
       // ---end EDIT FORM VIEW---
         
