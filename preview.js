@@ -43,7 +43,7 @@
       },
       'app-form h2': el => {
         el.classList.remove('mb-3')
-        el.classList.add('display-sm', 'mb-80')
+        el.classList.add('text-title-xl-desktop', 'font-medium', 'text-slate', 'mb-80')
         el.setAttribute('data-role', 'form-heading')
       },
       'app-form .nav-link[routerlink="../"]': el => {
