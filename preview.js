@@ -28,7 +28,7 @@
         if (el.querySelector('formio-grid')) {
           if (!el.querySelector('[data-role=heading-all-forms]')) {
             const title = document.createElement('h1')
-            title.classList.add('display-lg', 'mb-80')
+            title.classList.add('text-title-xl-desktop', 'font-medium', 'text-slate-4', 'mb-80')
             title.setAttribute('data-role', 'heading-all-forms')
             title.textContent = 'All forms'
             el.insertBefore(title, el.firstChild)
