@@ -7,7 +7,7 @@
   
     document.body.classList.add('font-rubik')
     const heading = document.querySelector('header')
-    heading?.classList.add('py-28', 'mb-96')
+    heading?.classList.add('py-14', 'mb-96')
   
     const navLinkClasses = [
       'text-body', 'text-slate-3', 'font-medium',
