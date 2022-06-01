@@ -2,7 +2,7 @@
 (() => {
     console.log('[sfds] preview')
   
-    const designSystemVersion = '0.0.0-259b525'
+    const designSystemVersion = '2.4.1'
     loadStylesheet(`https://unpkg.com/sfgov-design-system@${designSystemVersion}/dist/css/fonts.css`)
     loadStylesheet(`https://unpkg.com/sfgov-design-system@${designSystemVersion}/dist/css/sfds.css`)
   
