@@ -2,8 +2,9 @@
 (() => {
     console.log('[sfds] preview')
   
-    loadStylesheet('https://unpkg.com/sfgov-design-system@2.2.0/dist/css/fonts.css')
-    loadStylesheet('https://unpkg.com/sfgov-design-system@2.2.0/dist/css/sfds.css')
+    const designSystemVersion = '0.0.0-259b525'
+    loadStylesheet(`https://unpkg.com/sfgov-design-system@${designSystemVersion}/dist/css/fonts.css`)
+    loadStylesheet(`https://unpkg.com/sfgov-design-system@${designSystemVersion}/dist/css/sfds.css`)
   
     document.body.classList.add('font-rubik')
     const heading = document.querySelector('header')
