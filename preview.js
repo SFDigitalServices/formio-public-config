@@ -94,6 +94,20 @@
       },
       */
       // --- end SITE VIEW---
+        
+      // --- start share/embed dialog
+      '[role=dialog] .nav-item:not([hidden])': el => {
+        if (el.textContent.trim() === 'Embed') {
+          el.hidden = true
+        }
+      },
+      '[role=dialog] input[placeholder="https://examples.form.io/example"]': el => {
+        if (!el.hasAttribute('data-original-value')) {
+          el.setAttribute('data-original-value', el.value)
+        }
+        el.value = el.value.replace('/manage/view/#/form', '')
+      },
+      // --- end share/embed dialog
   
       // --- start ALL FORMS VIEW---
       // Adds spacing above the table
