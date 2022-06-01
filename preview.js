@@ -107,6 +107,10 @@
         }
         el.value = el.value.replace('/manage/view/#/form', '')
       },
+      '.btn-light': el => {
+        el.classList.remove('btn-light')
+        el.classList.add('hocus:text-white')
+      },
       // --- end share/embed dialog
   
       // --- start ALL FORMS VIEW---
