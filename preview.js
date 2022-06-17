@@ -346,7 +346,7 @@
       setStyle(iframe, {
         border: 'none',
         width: '100%',
-        height: '850px',
+        height: '1200px',
         'overflow-y': 'auto',
         'margin-top': '96px'
       })
