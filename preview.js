@@ -294,7 +294,7 @@
       },        
       // Enlarges editor area page title
       '.card-title': el => {
-        el.classList.add('text-display-sm', 'text-slate-4')
+        el.classList.add('text-display-lg', 'text-slate-4')
       }, 
       // ---end EDIT FORM VIEW---
         
