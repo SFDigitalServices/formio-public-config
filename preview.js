@@ -227,7 +227,7 @@
       }, 
       // Updates sidebar folder style
       '.card.form-builder-panel': el => {
-        el.classList.add('border-2', 'border-grey-3', 'mb-8')
+        el.classList.add('border-2', 'border-grey-2', 'mb-8')
       },
       // Updates sidebar folder header style
       '.card-header.form-builder-group-header': el => {
