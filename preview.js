@@ -227,7 +227,7 @@
       }, 
       // Updates sidebar folder style
       '.card.form-builder-panel': el => {
-        el.classList.add('border-2', 'border-grey-4', 'mb-8')
+        el.classList.add('border-2', 'border-grey-3', 'mb-8')
       },
       // Updates sidebar folder header style
       '.card-header.form-builder-group-header': el => {
@@ -327,7 +327,7 @@
       '.nav.mb-2': el => el.classList.replace('mb-2', 'mb-20'),
       '.builder-group-button': el => {
         el.classList.remove('builder-group-button')
-        el.classList.add('bg-grey-2', 'text-black', 'text-left', 'p-8', 'block', 'rounded-0')
+        el.classList.add('bg-grey-1', 'text-black', 'text-left', 'p-8', 'block', 'rounded-0')
       }      
     })
   
