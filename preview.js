@@ -96,7 +96,7 @@
       */
       // --- end SITE VIEW---
         
-      // --- start share/embed dialog
+      // --- start SHARE/EMBED dialog
       '[role=dialog] .nav-item:not([hidden])': el => {
         if (el.textContent.trim() === 'Embed') {
           el.hidden = true
@@ -113,7 +113,14 @@
         el.classList.add('hocus:text-white')
       },
       // --- end share/embed dialog
-  
+      
+      // --- start ACTIONS VIEW ---
+      '[id="action-select"]': el => {
+        el.classList.add('mr-20')
+      },
+          
+      // --- end ACTIONS VIEW ----
+
       // --- start ALL FORMS VIEW---
       // Adds spacing above the table
       '.input-group': el => {
@@ -221,10 +228,6 @@
         classify(el, el.matches('.active'), navLinkActiveClasses, navLinkInactiveClasses)
       },                
   
-      // Increases form group margin bottom  
-      /*'.form-group': el => {
-        el.classList.add('mb-40')
-      }, */
       // Updates sidebar folder style
       '.card.form-builder-panel': el => {
         el.classList.add('border-2', 'border-grey-2', 'mb-8')
