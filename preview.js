@@ -95,6 +95,14 @@
       },
       */
       // --- end SITE VIEW---
+      
+      // --- start EDIT FORM VIEW---
+      // Increases margin bottom to form group row
+      '.form-group.row': el => {
+        el.classList.add('mb-40')
+      }, 
+      // --- end EDIT FORM VIEW---
+  
         
       // --- start SHARE/EMBED dialog
       '[role=dialog] .nav-item:not([hidden])': el => {
