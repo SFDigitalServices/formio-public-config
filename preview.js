@@ -211,7 +211,7 @@
       // --- start EDIT FORM VIEW---      
       // Updates nav tabs style
       '.nav-tabs': el => {
-        el.classList.add('mb-40', 'border-0')
+        el.classList.add('mb-60', 'border-0')
       },
       
       // Updates nav link style
@@ -222,9 +222,9 @@
       },                
   
       // Increases form group margin bottom  
-      '.form-group': el => {
+      /*'.form-group': el => {
         el.classList.add('mb-40')
-      }, 
+      }, */
       // Updates sidebar folder style
       '.card.form-builder-panel': el => {
         el.classList.add('border-2', 'border-grey-2', 'mb-8')
