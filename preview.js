@@ -109,7 +109,7 @@
       // Updates Move, Edit JSON, Copy, Paste buttons style 
       '[ref="moveComponent"], [ref="editJson"], [ref="pasteComponent"], [ref="copyComponent"]': el => {
         el.classList.remove('btn-default')
-        el.classList.add('btn-secondary', 'border-2')
+        el.classList.add('btn-secondary', 'border-1')
       },     
       // --- end EDIT FORM VIEW---
   
