@@ -100,7 +100,17 @@
       // Increases margin bottom to form group row
       '.form-group.row': el => {
         el.classList.add('mb-40')
-      }, 
+      },         
+      // Updates Edit button style 
+      '[ref="editComponent"]': el => {
+        el.classList.remove('btn-secondary')
+        el.classList.add('btn-primary')
+      },  
+      // Updates Move, Edit JSON, Copy, Paste buttons style 
+      '[ref="editComponent"]': el => {
+        el.classList.remove('btn-default')
+        el.classList.add('btn-secondary', 'border-2')
+      },     
       // --- end EDIT FORM VIEW---
   
         
