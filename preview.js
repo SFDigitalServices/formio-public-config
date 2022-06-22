@@ -304,7 +304,7 @@
         el.classList.add('border-dashed','border-grey-4', 'border-1')
       },        
       // Enlarges editor area page title
-      '[ref="-container".card-title]': el => {
+      '[ref="-container" .card-title]': el => {
         el.classList.add('text-display-lg', 'text-slate-4')
       }, 
       // ---end EDIT FORM VIEW---
