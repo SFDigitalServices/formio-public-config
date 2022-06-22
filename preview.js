@@ -110,10 +110,13 @@
       '[ref="moveComponent"], [ref="editJson"], [ref="pasteComponent"], [ref="copyComponent"]': el => {
         el.classList.remove('btn-default')
         el.classList.add('btn-secondary', 'border-1')
-      },     
+      },    
+      // Updates Remove button style 
+      '[ref="removeComponent"]': el => {
+        el.classList.add('btn-danger')
+      },   
       // --- end EDIT FORM VIEW---
-  
-        
+
       // --- start SHARE/EMBED dialog
       '[role=dialog] .nav-item:not([hidden])': el => {
         if (el.textContent.trim() === 'Embed') {
