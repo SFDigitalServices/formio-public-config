@@ -107,7 +107,7 @@
         el.classList.add('btn-primary')
       },  
       // Updates Move, Edit JSON, Copy, Paste buttons style 
-      '[ref="editComponent"]': el => {
+      '[ref="moveComponent"], [ref="editJson"], [ref="pasteComponent"], [ref="copyComponent"]': el => {
         el.classList.remove('btn-default')
         el.classList.add('btn-secondary', 'border-2')
       },     
