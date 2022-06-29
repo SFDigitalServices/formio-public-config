@@ -112,7 +112,9 @@
         el.classList.add('btn-secondary', 'border-1')
       },    
       '.btn-danger, [ref="removeComponent"]': el => {
-        el.classList.add('bg-red-3')
+        if (el.getAttribute('title') !== 'Delete form') {
+          el.classList.add('bg-red-3')
+        }
       },
       // --- end EDIT FORM VIEW---
 
