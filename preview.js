@@ -111,10 +111,9 @@
         el.classList.remove('btn-default')
         el.classList.add('btn-secondary', 'border-1')
       },    
-      // Updates Remove button style 
-      '[ref="removeComponent"]': el => {
-        el.classList.add('btn-danger')
-      },   
+      '.btn-danger, [ref="removeComponent"]': el => {
+        el.classList.add('bg-red-3')
+      },
       // --- end EDIT FORM VIEW---
 
       // --- start SHARE/EMBED dialog
