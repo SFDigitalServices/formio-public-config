@@ -333,8 +333,8 @@
       },  
       // ---end VIEW DATA VIEW---  
   
-      // Replaces trash icons with the text "Delete"
-      '.fa-trash': el => {
+      // Replaces trash (and "times circle o") icons with the text "Delete"
+      '.fa-trash, .fa-times-circle-o': el => {
         el.parentNode.appendChild(document.createTextNode('Delete'))
         el.classList.remove('fa-trash')
       },
