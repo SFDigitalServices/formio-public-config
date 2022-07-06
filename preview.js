@@ -240,7 +240,7 @@
       // --- start EDIT FORM VIEW---      
       // Updates nav tabs style
       '.nav-tabs': el => {
-        el.classList.add('mb-60', 'border-0')
+        el.classList.add('border-0')
       },
       
       // Updates nav link style
