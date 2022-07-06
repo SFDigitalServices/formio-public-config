@@ -337,15 +337,22 @@
       },  
       // ---end VIEW DATA VIEW---  
   
+      '[aria-label]:not([aria-label=""]):empty': el => {
+        el.textContent = el.getAttribute('aria-label')
+      },
       // Replaces trash (and "times circle o") icons with the text "Delete"
       '.fa-trash, .fa-times-circle-o': el => {
-        el.classList.remove('fa-trash', 'fa-times-circle-o')
-        el.textContent = 'Delete'
+        el.parentNode.replaceChild(el, document.createTextNode('Delete'))
       },
       // Removes FontAwesome (.fa) icons in specific places
       'table .fa, .nav-link .fa, .fa-share-alt': el => {
-        el.classList.remove('fa')
-        el.remove()
+        el.classList.remove('fa', 'fa-share-alt')
+        const label = el.getAttribute('aria-label')
+        if (label) {
+          el.textContent = label
+        } else {
+          el.remove()
+        }
       },
       // Add style to FontAwesome (.fa) icons 
       '.builder-sidebar i.fa': el => {
