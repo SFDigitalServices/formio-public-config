@@ -343,7 +343,7 @@
       // Replaces trash (and "times circle o") icons with the text "Delete"
       '.fa-trash, .fa-times-circle-o': el => {
         el.classList.remove('fa-trash', 'fa-times-circle-0')
-        el.parentNode.appendChild(document.createTextNode('Delete'))
+        addText(el.parentNode, 'Delete')
       },
       // Removes FontAwesome (.fa) icons in specific places
       'table .fa, .nav-link .fa, .fa-share-alt': el => {
@@ -480,6 +480,12 @@
       } else {
         console.warn('moveElement(): not contained in "%s"', fromSelector)
         return false
+      }
+    }
+  
+    function addText (el, text) {
+      if (!el.textContent.includes(text)) {
+        el.appendChild(document.createTextNode(text))
       }
     }
   
