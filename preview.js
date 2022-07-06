@@ -339,7 +339,9 @@
   
       // Replaces trash (and "times circle o") icons with the text "Delete"
       '.fa-trash, .fa-times-circle-o': el => {
-        el.parentNode.appendChild(document.createTextNode('Delete'))
+        if (!el.parentNode.textContent.trim()) {
+          el.parentNode.appendChild(document.createTextNode('Delete'))
+        }
         el.classList.remove('fa-trash')
       },
       // Removes FontAwesome (.fa) icons in specific places
