@@ -342,17 +342,12 @@
       },
       // Replaces trash (and "times circle o") icons with the text "Delete"
       '.fa-trash, .fa-times-circle-o': el => {
-        el.parentNode.replaceChild(el, document.createTextNode('Delete'))
+        el.classList.remove('fa-trash', 'fa-times-circle-0')
+        el.parentNode.appendChild(document.createTextNode('Delete'))
       },
       // Removes FontAwesome (.fa) icons in specific places
       'table .fa, .nav-link .fa, .fa-share-alt': el => {
-        el.classList.remove('fa', 'fa-share-alt')
-        const label = el.getAttribute('aria-label')
-        if (label) {
-          el.textContent = label
-        } else {
-          el.remove()
-        }
+        el.remove()
       },
       // Add style to FontAwesome (.fa) icons 
       '.builder-sidebar i.fa': el => {
