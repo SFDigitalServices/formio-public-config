@@ -254,7 +254,7 @@
       '.card.form-builder-panel': el => {
         el.classList.add('border-2', 'border-grey-2', 'mb-8')
       },
-      '.card-header': el => {
+      '.formio-component-tabs .card-header': el => {
         el.classList.add('bg-white', 'border-0', 'm-8')
       },
       // Updates sidebar folder header style
