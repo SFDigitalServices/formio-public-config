@@ -69,7 +69,7 @@
        el.classList.add('border-0')
       },
       '.card-header.panel-heading': el => {
-       el.classList.add('border-0','bg-none')
+        el.classList.add('border-0', 'bg-none')
       }, 
       // Disables the login button nav item       
       'a[routerlink=login]': el => {
@@ -253,6 +253,9 @@
       // Updates sidebar folder style
       '.card.form-builder-panel': el => {
         el.classList.add('border-2', 'border-grey-2', 'mb-8')
+      },
+      '.card-header': el => {
+        el.classList.add('bg-white', 'border-0', 'm-8')
       },
       // Updates sidebar folder header style
       '.card-header.form-builder-group-header': el => {
