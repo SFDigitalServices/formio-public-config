@@ -79,11 +79,7 @@
       },       
       // --- end LOGIN PAGE---
   
-      // --- start SITE VIEW---
-      // Set min-width 
-      '.container-demo.container': el => {
-       el.style.minWidth = '1050px'
-      }  
+      // --- start SITE VIEW---  
       // Standardizes form buttons style
       '.form-control': el => {
        el.classList.add('bg-slate-1', 'rounded-lg', 'border-0', 'text-black', 'text-body', 'shadow-none')
