@@ -289,7 +289,7 @@
       // Updates inactive page breadcrumb style
       '.wizard-page-label': el => {
         el.classList.remove('mr-2', 'badge', 'badge-info')  
-        el.classList.add('block', 'bg-none', 'small', 'text-action', 'font-normal', 'underline', 'p-0', 'mb-20', 'leading-snug')
+        el.classList.add('block', 'bg-none', 'small', 'text-action', 'font-normal', 'underline', 'p-0', 'mb-20', 'leading-snug', 'hocus:text-blue-dark')
       },
       // Updates active page breadcrumb style
       'span.badge-primary.wizard-page-label': el => {
