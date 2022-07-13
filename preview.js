@@ -332,7 +332,7 @@
       // ---start VIEW DATA VIEW--- 
       // Extend table width for header and data
       'div.k-grid th, div.k-grid td': el => {
-        el.classList.add('w-xs')
+        el.classList.add('w-sm')
       },  
       // Align table header icon 
       'div.k-grid-header .k-header-column-menu': el => {
