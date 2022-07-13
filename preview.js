@@ -51,7 +51,7 @@
         if (el.hidden) return
         const link = el.cloneNode(false)
         link.classList.remove('nav-link')
-        link.classList.add('block', 'mb-8')
+        link.classList.add('block', 'mb-8', 'hocus:text-blue-dark')
         link.textContent = 'Back to all forms'
         const title = document.querySelector('[data-role=form-heading]')
         if (!title) console.warn('no [data-role=form-heading]!')
