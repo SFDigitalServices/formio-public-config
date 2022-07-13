@@ -88,11 +88,12 @@
       '.formio-component-multiple .choices__input': el => {
        el.classList.add('bg-slate-1')
       }, 
+      /*  
       // Hide the form link on header
       'a[routerlink=/form]': el => {
         el.classList.add('hidden')   
       }, 
-      /*
+      
       // Updates the login authentication style        
       'a[routerlink=auth]': el => {
        el.classList.add('text-action')
