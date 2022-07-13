@@ -89,7 +89,7 @@
        el.classList.add('bg-slate-1')
       }, 
       // Hide the form link on header
-      '[routerlink=/form]': el => {
+      'a[routerlink=/form]': el => {
         el.classList.remove('hidden')   
       }, 
       /*
