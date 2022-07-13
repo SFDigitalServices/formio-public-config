@@ -90,7 +90,7 @@
       }, 
       // Hide the form link on header
       'a[routerlink=/form]': el => {
-        el.classList.remove('hidden')   
+        el.classList.add('hidden')   
       }, 
       /*
       // Updates the login authentication style        
