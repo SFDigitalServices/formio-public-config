@@ -247,17 +247,12 @@
       '.nav-tabs': el => {
         el.classList.add('mb-40', 'border-0')
       },
-      // Remove margin bottom of nav inside Edit form 
-      '.card-header-tabs': el => {
-        el.classList.remove('mb-40')
-      }  
       // Updates nav link style
       '.nav-link:not([routerlink=login])': el => {
         // all nav links get these classes
         el.classList.add(...navLinkClasses)
         classify(el, el.matches('.active'), navLinkActiveClasses, navLinkInactiveClasses)
-      },                
-  
+      },                  
       // Updates sidebar folder style
       '.card.form-builder-panel': el => {
         el.classList.add('border-2', 'border-grey-2', 'mb-8')
