@@ -245,9 +245,12 @@
       // --- start EDIT FORM VIEW---      
       // Updates nav tabs style
       '.nav-tabs': el => {
-        el.classList.add('border-0', 'mb-40')
+        el.classList.add('mb-40', 'border-0')
       },
-      
+      // Remove margin bottom of nav inside Edit form 
+      '.card-header-tabs': el => {
+        el.classList.remove('mb-40')
+      }  
       // Updates nav link style
       '.nav-link:not([routerlink=login])': el => {
         // all nav links get these classes
