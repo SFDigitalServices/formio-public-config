@@ -216,9 +216,11 @@
         el.classList.remove('col-sm-4')
         el.classList.add('flex-shrink-0', 'space-x-8')
         // remove text and comment nodes that mess with spacing
-        [...el.childNodes]
-          .filter(child => child.nodeType !== Node.ELEMENT_NODE)
-          .forEach(child => child.remove())
+        for (const el of el.childNodes) {
+          if (child.nodeType !== Node.ELEMENT_NODE) {
+            child.remove()
+          }
+        }
       },
 
       // Updates table spacing of "All forms"
