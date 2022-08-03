@@ -188,7 +188,7 @@
             break
           case 'Delete':
           case 'Permissions':
-            el.hidden = true
+            el.remove()
             break
         }
       },
