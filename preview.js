@@ -488,7 +488,11 @@
           for (const mute of mutations) {
             const els = nearest(mute.target, selector)
             for (const el of els) {
-              fn(el)
+              try {
+                fn(el)
+              } catch (error) {
+                console.error('mutation error on "%s":', selector, error)
+              }
             }
           }
         }
