@@ -216,7 +216,7 @@
         el.classList.remove('col-sm-4')
         el.classList.add('flex-shrink-0', 'space-x-8')
         // remove text and comment nodes that mess with spacing
-        for (const el of el.childNodes) {
+        for (const child of el.childNodes) {
           if (child.nodeType !== Node.ELEMENT_NODE) {
             child.remove()
           }
