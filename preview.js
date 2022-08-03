@@ -164,7 +164,7 @@
       },
       // Widens the button div and adds some formatting
       'td .row .col-sm-4': el => {
-      el.classList.remove('col-sm-4')
+        el.classList.remove('col-sm-4')
         el.classList.add('col-sm-6', 'flex', 'justify-end')
       },
       // Changes "Edit Data" button text to "Preview"
@@ -176,9 +176,21 @@
         el.classList.remove('table-striped', 'table-bordered', 'table-hover')
       },
       // Updates table button style of "All forms"
-      'tbody button': el => {
+      'tbody button:not([hidden])': el => {
         el.classList.remove('btn-outline-secondary', 'btn-sm', 'form-btn')
         el.classList.add('bg-none', 'border-slate-3', 'border-2', 'text-slate-3', 'rounded-4', 'my-2', 'mx-4', 'hocus:bg-slate-4', 'hocus:text-white')
+
+        const text = el.textContent.trim()
+        switch (text) {
+          case 'Edit Form':
+            el.textContent = 'Edit'
+            el.parentNode.insertBefore(el, el.parentNode.firstChild)
+            break
+          case 'Delete':
+          case 'Permissions':
+            el.hidden = true
+            break
+        }
       },
       // Updates table spacing of "All forms"
       '.table td': el => {
