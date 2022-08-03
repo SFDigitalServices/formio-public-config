@@ -2,9 +2,13 @@
 (() => {
     console.log('[sfds] preview')
   
-    const designSystemVersion = '2.4.0'
-    loadStylesheet(`https://unpkg.com/sfgov-design-system@${designSystemVersion}/dist/css/fonts.css`)
-    loadStylesheet(`https://unpkg.com/sfgov-design-system@${designSystemVersion}/dist/css/sfds.css`)
+    const dependencies = {
+      'sfgov-design-system': '2.4.0',
+      'formiojs': '4.13.1',
+      'formio-sfds': '9.2.2'
+    }
+    loadStylesheet(unpkgUrl('sfgov-design-system', 'dist/css/fonts.css'))
+    loadStylesheet(unpkgUrl('sfgov-design-system', 'dist/css/sfds.css'))
   
     document.body.classList.add('font-rubik')
     const heading = document.querySelector('header')
@@ -82,11 +86,11 @@
       // --- start SITE VIEW---  
       // Standardizes form buttons style
       '.form-control': el => {
-       el.classList.add('bg-slate-1', 'rounded-lg', 'border-0', 'text-black', 'text-body', 'shadow-none')
+        el.classList.add('bg-slate-1', 'rounded-lg', 'border-0', 'text-black', 'text-body', 'shadow-none')
       },
       // Standardizes choice input style
       '.formio-component-multiple .choices__input': el => {
-       el.classList.add('bg-slate-1')
+        el.classList.add('bg-slate-1')
       }, 
       /*  
       // Hide the form link on header
@@ -167,11 +171,11 @@
       // --- start ALL FORMS VIEW---
       // Adds spacing above the table
       '.input-group': el => {
-       el.classList.add('mb-28')
+        el.classList.add('mb-28')
       },
       // Updates the form header style
       'th': el => {
-       el.classList.add('bg-slate-3', 'small', 'text-white', 'border-b-0', 'px-16', 'py-8')
+        el.classList.add('bg-slate-3', 'small', 'text-white', 'border-b-0', 'px-16', 'py-8')
       },
       // Changes "Edit Data" button text to "Preview"
       '.form-btn.form-btn-use': el => {
@@ -215,12 +219,7 @@
       '[data-type=row] .col-sm-4': el => {
         el.classList.remove('col-sm-4')
         el.classList.add('flex-shrink-0', 'space-x-8')
-        // remove text and comment nodes that mess with spacing
-        for (const child of el.childNodes) {
-          if (child.nodeType !== Node.ELEMENT_NODE) {
-            child.remove()
-          }
-        }
+        removeNonBreakingSpaces(el)
       },
 
       // Updates table spacing of "All forms"
@@ -414,8 +413,8 @@
         'https://formio-sfds.herokuapp.com/sfgov/forms.css'
       ]
       const scripts = [
-        'https://unpkg.com/formiojs@4.13.1/dist/formio.full.min.js',
-        'https://unpkg.com/formio-sfds@9.2.2/dist/formio-sfds.standalone.js'
+        unpkgUrl('formiojs', 'dist/formio.full.min.js'),
+        unpkgUrl('formio-sfds', 'dist/formio-sfds.standalone.js')
       ]
   
       const iframe = document.createElement('iframe')
@@ -537,6 +536,26 @@
       if (!el.textContent.includes(text)) {
         el.appendChild(document.createTextNode(text))
       }
+    }
+  
+    function removeNonBreakingSpaces (el) {
+      return replaceText(el, String.fromCharCode(160), '', true)
+    }
+    
+    function replaceText (el, find, replace, recursive) {
+      const pattern = new RegExp(find, 'g')
+      for (const child of el.childNodes) {
+        if (child.nodeType === Node.TEXT_NODE && child.nodeValue.includes(find)) {
+          child.nodeValue = child.nodeValue.replace(pattern, replace)          
+        } else if (recursive && child.nodeType === Node.ELEMENT_NODE) {
+          replaceText(child, find, replace, true)
+        }
+      }
+    }
+  
+    function unpkgUrl (packageName, filename) {
+      const version = dependencies[packageName] || 'latest'
+      return `https://unpkg.com/${packageName}@${version}/${filename}`
     }
   
   })()
