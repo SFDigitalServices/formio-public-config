@@ -173,16 +173,6 @@
       'th': el => {
        el.classList.add('bg-slate-3', 'small', 'text-white', 'border-b-0', 'px-16', 'py-8')
       },
-      // Narrows the form title container width
-      'td .row .col-sm-8': el => {
-        el.classList.remove('col-sm-8')
-          el.classList.add('col-sm-6')
-      },
-      // Widens the button div and adds some formatting
-      'td .row .col-sm-4': el => {
-        el.classList.remove('col-sm-4')
-        el.classList.add('col-sm-6', 'flex', 'justify-end')
-      },
       // Changes "Edit Data" button text to "Preview"
       '.form-btn.form-btn-use': el => {
         el.textContent = 'Preview'
@@ -192,9 +182,9 @@
         el.classList.remove('table-striped', 'table-bordered', 'table-hover')
       },
       // Updates table button style of "All forms"
-      'tbody button:not([hidden])': el => {
+      'tbody button': el => {
         el.classList.remove('btn-outline-secondary', 'btn-sm', 'form-btn')
-        el.classList.add('bg-none', 'border-slate-3', 'border-2', 'text-slate-3', 'rounded-4', 'my-2', 'mx-4', 'hocus:bg-slate-4', 'hocus:text-white')
+        el.classList.add('bg-none', 'border-slate-3', 'border-2', 'text-slate-3', 'rounded-4', 'hocus:bg-slate-4', 'hocus:text-white')
 
         const text = el.textContent.trim()
         switch (text) {
@@ -208,6 +198,24 @@
             break
         }
       },
+      
+      // re-style form table row bits
+      'tbody .row': el => {
+        el.className = 'flex flex-wrap gap-20 justify-between'
+        el.setAttribute('data-type', 'row')
+      },
+      '[data-type=row] .col-sm-8': el => {
+        el.classList.remove('col-sm-8')
+      },
+      '[data-type=row] .col-sm-4': el => {
+        el.classList.remove('col-sm-4')
+        el.classList.add('flex-shrink-0', 'space-x-8')
+        // remove text and comment nodes that mess with spacing
+        [...el.childNodes]
+          .filter(child => child.nodeType !== Node.ELEMENT_NODE)
+          .forEach(child => child.remove())
+      },
+
       // Updates table spacing of "All forms"
       '.table td': el => {
         el.classList.add('p-16')
