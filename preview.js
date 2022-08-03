@@ -2,7 +2,7 @@
 (() => {
     console.log('[sfds] preview')
   
-    const designSystemVersion = '0.0.0-259b525'
+    const designSystemVersion = '2.4.0'
     loadStylesheet(`https://unpkg.com/sfgov-design-system@${designSystemVersion}/dist/css/fonts.css`)
     loadStylesheet(`https://unpkg.com/sfgov-design-system@${designSystemVersion}/dist/css/sfds.css`)
   
@@ -96,10 +96,26 @@
       
       // Updates the login authentication style        
       'a[routerlink=auth]': el => {
-       el.classList.add('text-action')
+        el.classList.add('text-action')
       },
       */
       // --- end SITE VIEW---
+
+      // the nav container gets some additional classes
+      '[role=banner] .container': el => {
+        el.classList.add('flex', 'justify-between')
+      },
+      
+      // use our responsive container styles
+      '.container': el => {
+        el.classList.replace('container', 'responsive-container')
+      },
+      
+      // top nav
+      '[role=banner]': el => {
+        // NB: 'navbar' does positioning, but 'navbar-light' styles the menu button
+        el.classList.replace('navbar', 'block')
+      },
       
       // --- start EDIT FORM VIEW---
       // Increases margin bottom to form group row
