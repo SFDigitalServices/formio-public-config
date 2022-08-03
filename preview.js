@@ -219,7 +219,7 @@
       '[data-type=row] .col-sm-4': el => {
         el.classList.remove('col-sm-4')
         el.classList.add('flex-shrink-0', 'space-x-8')
-        removeNonBreakingSpaces(el)
+        removeSpuriousWhitespace(el)
       },
 
       // Updates table spacing of "All forms"
@@ -538,17 +538,18 @@
       }
     }
   
-    function removeNonBreakingSpaces (el) {
-      return replaceText(el, String.fromCharCode(160), '', true)
-    }
-    
-    function replaceText (el, find, replace, recursive) {
-      const pattern = new RegExp(find, 'g')
+    function removeSpuriousWhitespace (el, recursive) {
+      const pattern = new RegExp(`${String.fromCharCode(160)}+`, 'g')
       for (const child of el.childNodes) {
-        if (child.nodeType === Node.TEXT_NODE && child.nodeValue.includes(find)) {
-          child.nodeValue = child.nodeValue.replace(pattern, replace)          
+        if (child.nodeType === Node.TEXT_NODE) {
+          const trimmed = child.nodeValue.trim().replace(pattern, '')
+          if (trimmed) {
+            child.nodeValue = value
+          } else {
+            child.remove()
+          }
         } else if (recursive && child.nodeType === Node.ELEMENT_NODE) {
-          replaceText(child, find, replace, true)
+          removeSpuriousWhitespace(child)
         }
       }
     }
