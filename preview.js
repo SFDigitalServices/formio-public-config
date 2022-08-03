@@ -192,9 +192,14 @@
             el.textContent = 'Edit'
             el.parentNode.insertBefore(el, el.parentNode.firstChild)
             break
+
           case 'Delete':
           case 'Permissions':
             el.remove()
+            break
+
+          case 'View Data':
+            el.textContent = 'Data'
             break
         }
       },
