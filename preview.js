@@ -359,11 +359,11 @@
       // Updates editor area card header style
       '.builder-component .card-header': el => {
         el.classList.remove('bg-default')  
-        el.classList.add('bg-white', 'border-dashed','border-grey-4', 'border-1','rounded-0','border-0')
+        el.classList.add('bg-white', 'border-dashed','border-grey-3', 'border-1','rounded-0','border-0')
       },     
       // Updates editor area component border style
       '.formbuilder .formio-component-content': el => {
-        el.classList.add('border-dashed','border-grey-4', 'border-1')
+        el.classList.add('border-dashed','border-grey-3', 'border-1')
       },        
       // Enlarges editor area page title
       '[ref="dragComponent"] .card-title': el => {
