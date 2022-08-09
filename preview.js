@@ -324,7 +324,7 @@
       },        
       // Updates page breadcrumb background style
       '.breadcrumb': el => {
-        el.classList.add('flex-col', 'order-2', 'w-1\/4', 'bg-grey-1', 'inline', 'rounded-0', 'p-28', 'm-0')
+        el.classList.add('flex-col', 'order-2', 'w-1\/4', 'bg-grey-1', 'inline', 'rounded-0', 'pt-28', 'pr-28', 'pb-28', 'pl-8', 'm-0')
       },   
       // Updates inactive page breadcrumb style
       '.wizard-page-label': el => {
