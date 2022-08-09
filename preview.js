@@ -320,7 +320,7 @@
       }, 
       // Updates builder component drag container style
       '[ref="-container"]': el => {
-        el.classList.add('bg-grey-1', 'py-16', 'pl-16')
+        el.classList.add('bg-grey-1')
       },        
       // Updates page breadcrumb background style
       '.breadcrumb': el => {
@@ -349,7 +349,7 @@
         
       // Adds a background grey to the editor
         '[ref="form"]': el => {
-        el.classList.add('bg-grey-1', 'w-3\/4')
+        el.classList.add('bg-grey-1', 'w-3\/4', 'p-20')
         },
       // Updates editor area card style
       '.builder-component .card': el => {
