@@ -124,7 +124,7 @@
       // --- start EDIT FORM VIEW---
       // Increases margin bottom to form group row
       '.form-group.row': el => {
-        el.classList.add('mb-40')
+        el.classList.add('mb-40', 'mt-40')
       },         
       // Updates Edit button style 
       '[ref="editComponent"]': el => {
@@ -287,7 +287,7 @@
       // --- start EDIT FORM VIEW---      
       // Updates nav tabs style
       '.nav-tabs': el => {
-        el.classList.add('mb-40', 'border-0')
+        el.classList.add('border-0')
       },
       // Updates nav link style
       '.nav-link:not([routerlink=login])': el => {
