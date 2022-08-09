@@ -338,8 +338,8 @@
       },         
       // Updates add page breadcrumb style
       'span.badge-success.wizard-page-label': el => {
-        el.classList.remove('mr-2', 'text-action', 'p-0', 'underline')
-        el.classList.add('bg-slate-3', 'small', 'text-white', 'font-medium', 'rounded-sm', 'block', 'mt-16', 'm-0', 'p-8', 'text-center')
+        el.classList.remove('mr-2', 'text-action', 'p-0', 'underline', 'hocus:text-blue-dark')
+        el.classList.add('hocus:text-white', 'bg-slate-3', 'small', 'text-white', 'font-medium', 'rounded-sm', 'block', 'mt-16', 'm-0', 'p-8', 'text-center')
         const icon = el.querySelector('i')
         if (icon) {
           icon.classList.add('mr-8')
