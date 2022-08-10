@@ -51,8 +51,8 @@
         el.classList.add('text-title-xl-desktop', 'font-medium', 'text-slate-4', 'mb-80')
         el.setAttribute('data-role', 'form-heading')
       },
-      'app-form .nav-link[routerlink="../"]': el => {
-        if (el.hidden) return
+      'app-form .nav-link[routerlink="../"]:not([hidden])': el => {
+        if (el.textContent.includes('Back to all forms')) return
         const link = el.cloneNode(false)
         link.classList.remove('nav-link')
         link.classList.add('block', 'mb-8', 'hocus:text-blue-dark')
