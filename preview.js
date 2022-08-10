@@ -186,7 +186,7 @@
         el.classList.remove('table-striped', 'table-bordered', 'table-hover')
       },
       // Updates table button style of "All forms"
-      'tbody button': el => {
+      '.formio-grid tbody button': el => {
         el.classList.remove('btn-outline-secondary', 'btn-sm', 'form-btn')
         el.classList.add('bg-none', 'border-slate-3', 'border-2', 'text-slate-3', 'rounded-4', 'hocus:bg-slate-4', 'hocus:text-white')
 
