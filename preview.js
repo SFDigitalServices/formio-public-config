@@ -2,7 +2,7 @@
 ---
 // form preview javascript
 (() => {
-    console.log('[sfds] preview ({{ site.github.build_revision | slice: 1, 7 }})')
+    console.log('[sfds] preview ({{ site.github.build_revision | slice: 0, 7 }})')
   
     const dependencies = {
       'sfgov-design-system': '2.4.0',
