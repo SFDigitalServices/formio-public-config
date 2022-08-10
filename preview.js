@@ -1,6 +1,6 @@
 // form preview javascript
 (() => {
-    console.log('[sfds] preview')
+    console.log('[sfds] preview {{ site.github.build_revision }}')
   
     const dependencies = {
       'sfgov-design-system': '2.4.0',
