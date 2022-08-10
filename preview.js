@@ -22,8 +22,6 @@
     ]
     const navLinkActiveClasses = ['bg-slate-1', 'border-slate-2', 'border-b-4']
     const navLinkInactiveClasses = ['bg-none', 'border-grey-3', 'border-b-2']
-  
-    let backToAllFormsLink
 
     const observer = observe({
       '.formio-form': hijackForm,
@@ -56,8 +54,11 @@
         el.setAttribute('data-role', 'form-heading')
       },
       'app-form .nav-link[routerlink="../"]': el => {
-        if (backToAllFormsLink?.parentNode) return
-        else if (backToAllFormsLink) backToAllFormsLink.remove()
+        let existing = el.closest('app-form').querySelector('.nav-link[routerlink="../"]')
+        if (existing) {
+          console.info('Back to all forms link already exists; removing')
+          existing.remove()
+        }
 
         console.info('back link:', el.outerHTML)
         const link = el.cloneNode(false)
@@ -66,9 +67,8 @@
         link.textContent = 'Back to all forms'
         const title = document.querySelector('[data-role=form-heading]')
         if (title) {
-          title?.parentNode.insertBefore(link, title)
+          title.parentNode.insertBefore(link, title)
           el.remove()
-          backToAllFormsLink = link
         } else {
           console.warn('no [data-role=form-heading]!')
         }
