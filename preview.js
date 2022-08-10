@@ -57,16 +57,21 @@
       },
       'app-form .nav-link[routerlink="../"]': el => {
         if (backToAllFormsLink?.parentNode) return
+        else if (backToAllFormsLink) backToAllFormsLink.remove()
+
         console.info('back link:', el.outerHTML)
         const link = el.cloneNode(false)
         link.classList.remove('nav-link')
         link.classList.add('block', 'mb-8', 'hocus:text-blue-dark')
         link.textContent = 'Back to all forms'
         const title = document.querySelector('[data-role=form-heading]')
-        if (!title) console.warn('no [data-role=form-heading]!')
-        title?.parentNode.insertBefore(link, title)
-        el.remove()
-        backToAllFormsLink = link
+        if (title) {
+          title?.parentNode.insertBefore(link, title)
+          el.remove()
+          backToAllFormsLink = link
+        } else {
+          console.warn('no [data-role=form-heading]!')
+        }
       },
       'app-form .nav-link[routerlink=edit]:not([data-moved])': a => {
         const li = a.parentNode
