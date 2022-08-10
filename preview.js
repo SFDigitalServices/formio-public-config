@@ -51,8 +51,8 @@
         el.classList.add('text-title-xl-desktop', 'font-medium', 'text-slate-4', 'mb-80')
         el.setAttribute('data-role', 'form-heading')
       },
-      'app-form .nav-link[routerlink="../"]:not([hidden])': el => {
-        if (el.textContent.includes('Back to all forms')) return
+      'app-form .nav-link[routerlink="../"]': el => {
+        console.info('back link:', el.outerHTML)
         const link = el.cloneNode(false)
         link.classList.remove('nav-link')
         link.classList.add('block', 'mb-8', 'hocus:text-blue-dark')
@@ -60,7 +60,7 @@
         const title = document.querySelector('[data-role=form-heading]')
         if (!title) console.warn('no [data-role=form-heading]!')
         title?.parentNode.insertBefore(link, title)
-        el.hidden = true
+        el.remove()
       },
       'app-form .nav-link[routerlink=edit]:not([data-moved])': a => {
         const li = a.parentNode
