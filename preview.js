@@ -21,6 +21,8 @@
     const navLinkActiveClasses = ['bg-slate-1', 'border-slate-2', 'border-b-4']
     const navLinkInactiveClasses = ['bg-none', 'border-grey-3', 'border-b-2']
   
+    let backToAllFormsLink
+
     const observer = observe({
       '.formio-form': hijackForm,
       'a[routerlink=view]': el => {
@@ -52,6 +54,7 @@
         el.setAttribute('data-role', 'form-heading')
       },
       'app-form .nav-link[routerlink="../"]': el => {
+        if (backToAllFormsLink?.parentNode) return
         console.info('back link:', el.outerHTML)
         const link = el.cloneNode(false)
         link.classList.remove('nav-link')
@@ -61,6 +64,7 @@
         if (!title) console.warn('no [data-role=form-heading]!')
         title?.parentNode.insertBefore(link, title)
         el.remove()
+        backToAllFormsLink = link
       },
       'app-form .nav-link[routerlink=edit]:not([data-moved])': a => {
         const li = a.parentNode
