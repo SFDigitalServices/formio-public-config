@@ -362,6 +362,10 @@
         '[ref="form"]': el => {
         el.classList.add('bg-grey-1', 'w-3\/4', 'p-20')
         },
+       // Add more padding between each panel
+      '.builder-component: el => {
+        el.classList.add('mt-60')
+      },    
       // Updates editor area card style
       '.builder-component .card': el => {
         el.classList.remove('border')
