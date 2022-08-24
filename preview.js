@@ -426,7 +426,11 @@
     '.builder-group-button': el => {
       el.classList.remove('builder-group-button')
       el.classList.add('bg-grey-2', 'text-black', 'text-left', 'p-8', 'block', 'rounded-0')
-    }      
+    },
+    
+    // vertical button sizing
+    '.preview-panel + div:not([class])': el => el.classList.add('flex'),
+    '.datagrid-table .btn:not(.py-8)': el => el.classList.add('py-8')
   })
 
   observer.observe(document.body, { childList: true, subtree: true })
