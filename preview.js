@@ -18,6 +18,11 @@
   }
   loadStylesheet(unpkgUrl('sfgov-design-system', 'dist/css/fonts.css'))
   loadStylesheet(unpkgUrl('sfgov-design-system', 'dist/css/sfds.css'))
+  
+  // kill bootstrap styles that override our CSS
+  for (const link of document.querySelectorAll('link[href*=bootstrap]:last-of-child')) {
+    link.remove()
+  }
 
   document.body.classList.add('font-rubik')
   const heading = document.querySelector('header')
