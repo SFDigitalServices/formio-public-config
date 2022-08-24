@@ -330,7 +330,7 @@
         el.classList.add('flex', 'mb-20')
       }, 
       // Updates builder component drag container style
-      '.builder-components': el => {
+      '[ref=webform] > .builder-components': el => {
         el.classList.add('bg-grey-1', 'space-y-60')
       },        
       // Updates page breadcrumb background style
