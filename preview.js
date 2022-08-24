@@ -20,7 +20,7 @@
   loadStylesheet(unpkgUrl('sfgov-design-system', 'dist/css/sfds.css'))
   
   // kill bootstrap styles that override our CSS
-  for (const link of document.querySelectorAll('link[href*=bootstrap]:last-of-child')) {
+  for (const link of document.querySelectorAll('link[href*=bootstrap]:last-of-type')) {
     link.remove()
   }
 
