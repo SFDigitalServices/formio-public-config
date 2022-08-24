@@ -16,11 +16,6 @@
   }
   loadStylesheet(unpkgUrl('sfgov-design-system', 'dist/css/fonts.css'))
   loadStylesheet(unpkgUrl('sfgov-design-system', 'dist/css/sfds.css'))
-  
-  // kill bootstrap styles that override our CSS
-  for (const link of document.querySelectorAll('link[href*=bootstrap]:last-of-type')) {
-    link.remove()
-  }
 
   document.body.classList.add('font-rubik')
   const heading = document.querySelector('header')
@@ -35,6 +30,10 @@
 
   const observer = observe({
     '.formio-form': hijackForm,
+    
+    // kill zombie bootstrap styles
+    'link[href*="/bootstrap"]:last-of-type': el => el.remove(),
+    
     'a[routerlink=view]': el => {
       el.lastChild.nodeValue = 'Preview'
     },
@@ -424,7 +423,13 @@
     '.builder-group-button': el => {
       el.classList.remove('builder-group-button')
       el.classList.add('bg-grey-2', 'text-black', 'text-left', 'p-8', 'block', 'rounded-0')
-    }
+    },
+    
+    // fix vertical button sizing
+    '.preview-panel + div:not([class])': el => el.classList.add('flex'),
+    '.datagrid-table .btn:not(.py-8)': el => el.classList.add('py-8'),
+    // FIXME: there doesn't seem to be any way to fix this
+    'app-edit > .form-group .btn': el => el.style.setProperty('line-height', '22px')
   })
 
   observer.observe(document.body, { childList: true, subtree: true })
