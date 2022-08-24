@@ -330,8 +330,8 @@
         el.classList.add('flex', 'mb-20')
       }, 
       // Updates builder component drag container style
-      '[ref="-container"]': el => {
-        el.classList.add('bg-grey-1')
+      '.builder-components': el => {
+        el.classList.add('bg-grey-1', 'space-y-60')
       },        
       // Updates page breadcrumb background style
       '.breadcrumb': el => {
