@@ -53,6 +53,9 @@
         el.querySelector('[data-role=heading-all-forms]')?.remove()
       }
     },
+    'nav .navbar-nav:last-child:not([hidden])': el => {
+      el.hidden = true
+    },
     '.navbar-brand': el => {
       el.classList.replace('navbar-brand', 'big-desc')
       el.classList.add('text-inherit')
