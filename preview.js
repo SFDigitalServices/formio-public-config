@@ -32,7 +32,7 @@
     '.formio-form': hijackForm,
 
     // kill bootstrap styles that override our CSS
-    'link[href*=bootstrap]:last-of-type': el => el.remove(),
+    'head link[href*=bootstrap]:last-of-type': el => el.remove(),
 
     'a[routerlink=view]': el => {
       el.lastChild.nodeValue = 'Preview'
@@ -430,7 +430,7 @@
     '.datagrid-table .btn:not(.py-8)': el => el.classList.add('py-8')
   })
 
-  observer.observe(document.body, { childList: true, subtree: true })
+  observer.observe(document.documentElement, { childList: true, subtree: true })
 
   function renderPreview (url) {
     const styles = [
