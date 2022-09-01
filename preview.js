@@ -58,6 +58,11 @@
         el.hidden = true
       }
     },
+    'nav .navbar-nav:last-child[hidden]': el => {
+      if (el.textContent.includes('Logout')) {
+        el.hidden = false
+      }
+    },
     '.navbar-brand': el => {
       el.classList.replace('navbar-brand', 'big-desc')
       el.classList.add('text-inherit')
