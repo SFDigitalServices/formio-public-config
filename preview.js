@@ -53,6 +53,11 @@
         el.querySelector('[data-role=heading-all-forms]')?.remove()
       }
     },
+    'a[routerlink="/form"]': el => {
+      if (el.textContent.trim() === 'Forms') {
+        el.textContent = 'All forms'
+      }
+    },
     '.navbar-brand': el => {
       el.classList.replace('navbar-brand', 'big-desc')
       el.classList.add('text-inherit')
