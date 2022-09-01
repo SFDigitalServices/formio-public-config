@@ -17,11 +17,6 @@
   loadStylesheet(unpkgUrl('sfgov-design-system', 'dist/css/fonts.css'))
   loadStylesheet(unpkgUrl('sfgov-design-system', 'dist/css/sfds.css'))
   
-  // kill bootstrap styles that override our CSS
-  for (const link of document.querySelectorAll('link[href*=bootstrap]:last-of-type')) {
-    link.remove()
-  }
-
   document.body.classList.add('font-rubik')
   const heading = document.querySelector('header')
   heading?.classList.add('py-28', 'mb-96')
@@ -35,6 +30,10 @@
 
   const observer = observe({
     '.formio-form': hijackForm,
+
+    // kill bootstrap styles that override our CSS
+    'link[href*=bootstrap]:last-of-type': el => el.remove(),
+
     'a[routerlink=view]': el => {
       el.lastChild.nodeValue = 'Preview'
     },
