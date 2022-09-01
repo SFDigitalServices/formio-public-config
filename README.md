@@ -18,7 +18,7 @@ This repo contains bits and bobs for use in Form.io [form manager configurations
         | `title` | (your title here) |
         | `logo` | `https://sf.gov/themes/custom/sfgovpl/logo.svg` |
         | `logoHeight` | `56` |
-        | `js` | `https://sfdigitalservices.github.io/formio-public-config/preview.js` |
+        | `js` | `https://cdn.jsdelivr.net/gh/SFDigitalServices/formio-public-config/preview.js` |
 
     Leave the "JSON" checkboxes unchecked.
 
