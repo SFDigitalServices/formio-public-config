@@ -53,8 +53,10 @@
         el.querySelector('[data-role=heading-all-forms]')?.remove()
       }
     },
-    'nav .navbar-nav:last-child:not([hidden])': el => {
-      el.hidden = true
+    'nav .navbar-nav:last-child': el => {
+      if (el.textContent.includes('Login | Register')) {
+        el.hidden = true
+      }
     },
     '.navbar-brand': el => {
       el.classList.replace('navbar-brand', 'big-desc')
