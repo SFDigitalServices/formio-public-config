@@ -1,5 +1,3 @@
----
----
 // form preview javascript
 ((dataAttribute) => {
 
@@ -8,7 +6,7 @@
     return
   } 
   
-  console.log('[sfds] preview ({{ site.github.build_revision | slice: 0, 7 }})')
+  console.log('[sfds] preview')
   document.body.setAttribute(dataAttribute, 'true')
 
   const dependencies = {
