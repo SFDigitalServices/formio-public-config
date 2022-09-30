@@ -67,9 +67,9 @@
       el.classList.add('text-title-xl-desktop', 'font-medium', 'text-slate-4', 'mb-80')
       el.setAttribute('data-role', 'form-heading')
     },
-    '.nav-item .nav-link[routerlink="../"]:not([hidden])': el => {
-      for (const existing of document.querySelectorAll('app-form > .nav-link[routerlink="../"]')) {
-        console.info('Back to all forms link already exists; removing', existing.outerHTML)
+    '.nav-link[routerlink="../"]': el => {
+      for (const existing of document.querySelectorAll('app-form > [routerlink="../"]')) {
+        console.info('Back link already exists; removing', existing.outerHTML)
         existing.remove()
       }
 
@@ -84,7 +84,6 @@
         el.remove()
       } else {
         console.warn('no [data-role=form-heading]!')
-        el.hidden = true
       }
     },
     'app-form .nav-link[routerlink=edit]:not([data-moved])': a => {
