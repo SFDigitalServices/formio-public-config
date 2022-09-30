@@ -68,7 +68,7 @@
       el.setAttribute('data-role', 'form-heading')
     },
     'app-form .nav-link[routerlink="../"]': el => {
-      let existing = el.closest('app-form').querySelector('.nav-link[routerlink="../"]')
+      let existing = document.querySelector('app-form > .nav-link[routerlink="../"]')
       if (existing) {
         console.info('Back to all forms link already exists; removing')
         existing.remove()
