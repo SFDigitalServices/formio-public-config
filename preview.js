@@ -464,12 +464,12 @@
       <div id="formio"></div>
       ${scripts.map(src => `<script src="${src}"></script>`).join('\n')}
       <script>
-        Formio.createForm(document.getElementById('formio'), ${JSON.stringify(url)}, {
-          submission: {
-            data: ${JSON.stringify(data, null, 2)}
-          }
-        })
-          .then(form => console.info('[sfds] form ready!'))
+        const data = JSON.stringify(data, null, 2)
+        Formio.createForm(document.getElementById('formio'), ${JSON.stringify(url)})
+          .then(form => {
+            console.info('[sfds] form ready!', data)
+            form.submission = { data }
+          })
       </script>
     `
     return iframe
