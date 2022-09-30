@@ -464,7 +464,7 @@
       <div id="formio"></div>
       ${scripts.map(src => `<script src="${src}"></script>`).join('\n')}
       <script>
-        const data = JSON.stringify(data, null, 2)
+        const data = ${JSON.stringify(data, null, 2)}
         Formio.createForm(document.getElementById('formio'), ${JSON.stringify(url)})
           .then(form => {
             console.info('[sfds] form ready!', data)
