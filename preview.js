@@ -466,7 +466,7 @@
       <script>
         Formio.createForm(document.getElementById('formio'), ${JSON.stringify(url)}, {
           submission: {
-            data: ${JSON.stringify(data)}
+            data: ${JSON.stringify(data, null, 2)}
           }
         })
           .then(form => console.info('[sfds] form ready!'))
