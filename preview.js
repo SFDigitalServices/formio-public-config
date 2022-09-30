@@ -68,6 +68,10 @@
       el.setAttribute('data-role', 'form-heading')
     },
     '.nav-link[routerlink="../"]': el => {
+      if (el.href?.endsWith('/submission')) {
+        el.remove()
+        return
+      }
       for (const existing of document.querySelectorAll('app-form > [routerlink="../"]')) {
         console.info('Back link already exists; removing', existing.outerHTML)
         existing.remove()
