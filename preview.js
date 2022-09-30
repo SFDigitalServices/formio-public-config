@@ -440,7 +440,7 @@
 
   observer.observe(document.documentElement, { childList: true, subtree: true })
 
-  function renderPreview (url) {
+  function renderPreview (url, data) {
     const styles = [
       'https://formio-sfds.herokuapp.com/sfgov/forms.css'
     ]
@@ -464,7 +464,11 @@
       <div id="formio"></div>
       ${scripts.map(src => `<script src="${src}"></script>`).join('\n')}
       <script>
-        Formio.createForm(document.getElementById('formio'), ${JSON.stringify(url)})
+        Formio.createForm(document.getElementById('formio'), ${JSON.stringify(url)}, {
+          submission: {
+            data: ${JSON.stringify(data)}
+          }
+        })
           .then(form => console.info('[sfds] form ready!'))
       </script>
     `
@@ -501,7 +505,7 @@
       console.log('[sfds] form:', form)
       const url = `${form.formio.projectUrl}/${form.form.path}`
       console.log('[sfds] rendering preview for: %s', url)
-      const preview = renderPreview(url)
+      const preview = renderPreview(url, form._data)
       el.hidden = true
       el.parentNode.insertBefore(preview, el)
     }
