@@ -467,7 +467,7 @@
         const display = '${location.hash?.endsWith('/view') ? 'form' : ''}'
         Formio.createForm(document.getElementById('formio'), ${JSON.stringify(url)})
           .then(form => {
-            console.info('[sfds] form ready! display:', display)
+            console.info('[sfds] form ready!', form)
             if (display) {
               form.form.display = display
               form.render()
