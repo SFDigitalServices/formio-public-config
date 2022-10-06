@@ -495,7 +495,7 @@
   }
 
   function hijackForm (el) {
-    if (!el.closest('app-view')) {
+    if (!el.closest('app-view, formio')) {
       console.debug('[sfds] skipping hijack (not contained in <app-view> or <formio>):', el)
       return
     }
