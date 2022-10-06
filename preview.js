@@ -464,11 +464,13 @@
       <div id="formio"></div>
       ${scripts.map(src => `<script src="${src}"></script>`).join('\n')}
       <script>
-        const data = ${JSON.stringify(data, null, 2)}
+        const data = ${data ? JSON.stringify(data, null, 2) : 'null'}
         Formio.createForm(document.getElementById('formio'), ${JSON.stringify(url)})
           .then(form => {
             console.info('[sfds] form ready!', data)
-            form.submission = { data }
+            if (data) {
+              form.submission = { data }
+            }
           })
       </script>
     `
@@ -504,8 +506,8 @@
       const form = Object.values(window.Formio.forms).pop()
       console.log('[sfds] form:', form)
       const url = `${form.formio.projectUrl}/${form.form.path}`
-      console.log('[sfds] rendering preview for: %s', url)
-      const preview = renderPreview(url, form._data)
+      console.log('[sfds] rendering preview for: %s', url, form.submission)
+      const preview = renderPreview(url)
       el.hidden = true
       el.parentNode.insertBefore(preview, el)
     }
