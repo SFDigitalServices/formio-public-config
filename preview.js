@@ -457,6 +457,9 @@
       'overflow-y': 'auto',
       'margin-top': '96px'
     })
+    const options = {
+      renderMode: location.hash?.endsWith('/view') ? 'flat' : 'form'
+    }
     iframe.srcdoc = `
       <style type="text/css">
         ${styles.map(url => `@import url('${url}');`).join('\n')}
@@ -464,14 +467,9 @@
       <div id="formio"></div>
       ${scripts.map(src => `<script src="${src}"></script>`).join('\n')}
       <script>
-        const display = '${location.hash?.endsWith('/view') ? 'form' : ''}'
-        Formio.createForm(document.getElementById('formio'), ${JSON.stringify(url)})
+        Formio.createForm(document.getElementById('formio'), ${JSON.stringify(url)}, ${JSON.stringify(options, null, 2)})
           .then(form => {
             console.info('[sfds] form ready!', form)
-            if (display) {
-              form.form.display = display
-              form.render()
-            }
           })
       </script>
     `
