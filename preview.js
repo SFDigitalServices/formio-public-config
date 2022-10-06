@@ -502,9 +502,13 @@
 
     const attr = 'data-hijacked'
     if (el && !el.hasAttribute(attr)) {
-      el.setAttribute(attr, true)
       const form = Object.values(window.Formio.forms).pop()
       console.log('[sfds] form:', form)
+      if (form.formio?.formUrl?.includes('admin/login')) {
+        console.warn('not hijacking:', form.formio.formUrl)
+        return
+      }
+      el.setAttribute(attr, true)
       const url = `${form.formio.projectUrl}/${form.form.path}`
       console.log('[sfds] rendering preview for: %s', url, form.submission)
       const preview = renderPreview(url)
