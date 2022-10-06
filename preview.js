@@ -506,8 +506,8 @@
       }
       el.setAttribute(attr, true)
       let url = `${form.formio.projectUrl}/${form.form.path}`
-      if (form.submission?._id) {
-        url = `${url}/submission/${form.submission._id}`
+      if (form._submission?._id) {
+        url = `${url}/submission/${form._submission._id}`
       }
       console.log('[sfds] rendering preview for: %s', url)
       const preview = renderPreview(url, form)
