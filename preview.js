@@ -440,7 +440,7 @@
 
   observer.observe(document.documentElement, { childList: true, subtree: true })
 
-  function renderPreview (url) {
+  function renderPreview (url, form) {
     const styles = [
       'https://formio-sfds.herokuapp.com/sfgov/forms.css'
     ]
@@ -464,15 +464,20 @@
       <div id="formio"></div>
       ${scripts.map(src => `<script src="${src}"></script>`).join('\n')}
       <script>
+        const display = '${location.hash?.endsWith('/view') ? 'form' : ''}'
         Formio.createForm(document.getElementById('formio'), ${JSON.stringify(url)})
           .then(form => {
-            console.info('[sfds] form ready!')
+            console.info('[sfds] form ready! display:', display)
+            if (display) {
+              form.form.display = display
+              form.render()
+            }
           })
       </script>
     `
     return iframe
   }
-
+  
   function setStyle (el, styles) {
     for (const [prop, value] of Object.entries(styles)) {
       el.style.setProperty(prop, value)
