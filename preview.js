@@ -484,7 +484,7 @@
     })
   }
 
-  function renderPreview (url, options) {
+  function renderPreview (url, options, callback) {
     const styles = [
       'https://formio-sfds.herokuapp.com/sfgov/forms.css'
     ]
@@ -511,6 +511,7 @@
         Formio.createForm(document.getElementById('formio'), ${JSON.stringify(url)}, ${JSON.stringify(options, null, 2)})
           .then(form => {
             console.info('[sfds] form ready!', form)
+            return form.redraw().then(${callback || '() => form'})
           })
       </script>
     `
