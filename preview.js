@@ -441,18 +441,18 @@
   observer.observe(document.documentElement, { childList: true, subtree: true })
 
   function renderPreview (url, form) {
-    return renderForm(url, form, {
+    return renderForm(url, {
       renderMode: 'form'
     })
   }
   
   function renderEditor (url, form) {
-    return renderForm(url, form, {
+    return renderForm(url, {
       renderMode: 'flat'
     })
   }
 
-  function renderForm (form, url, options) {
+  function renderForm (url, options) {
     const styles = [
       'https://formio-sfds.herokuapp.com/sfgov/forms.css'
     ]
