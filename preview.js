@@ -10,7 +10,7 @@
   document.body.setAttribute(dataAttribute, 'true')
 
   const dependencies = {
-    'sfgov-design-system': '2.4.0',
+    'sfgov-design-system': '2.5.0',
     'formiojs': '4.13.1',
     'formio-sfds': '9.2.2'
   }
@@ -499,7 +499,7 @@
       unpkgUrl('formiojs', 'dist/formio.full.min.js'),
       unpkgUrl('formio-sfds', 'dist/formio-sfds.standalone.js'),
       // we need <sfgov-icon> for rendering the submission status
-      'https://unpkg.com/sfgov-design-system@2.5.0/dist/js/icons.js'
+      unpkgUrl('sfgov-design-system', 'dist/js/icons.js')
     ]
 
     const iframe = document.createElement('iframe')
