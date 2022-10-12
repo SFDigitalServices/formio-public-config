@@ -441,6 +441,18 @@
   observer.observe(document.documentElement, { childList: true, subtree: true })
 
   function renderPreview (url, form) {
+    return renderForm(url, form, {
+      renderMode: 'form'
+    })
+  }
+  
+  function renderEditor (url, form) {
+    return renderForm(url, form, {
+      renderMode: 'flat'
+    })
+  }
+
+  function renderForm (form, url, options) {
     const styles = [
       'https://formio-sfds.herokuapp.com/sfgov/forms.css'
     ]
@@ -457,9 +469,6 @@
       'overflow-y': 'auto',
       'margin-top': '96px'
     })
-    const options = {
-      renderMode: location.hash?.endsWith('/view') ? 'flat' : 'form'
-    }
     iframe.srcdoc = `
       <style type="text/css">
         ${styles.map(url => `@import url('${url}');`).join('\n')}
@@ -509,13 +518,17 @@
       }
       el.setAttribute(attr, true)
       let url = `${form.formio.projectUrl}/${form.form.path}`
+      /*
       if (form.formio.submissionId) {
         url = `${url}/submission/${form.formio.submissionId}`
       }
+      */
       console.log('[sfds] rendering preview for: %s', url)
-      const preview = renderPreview(url, form)
+      const rendered = location.hash?.endsWith('/edit')
+        ? renderEditor(url, form)
+        : renderPreview(url, form)
       el.hidden = true
-      el.parentNode.insertBefore(preview, el)
+      el.parentNode.insertBefore(rendered, el)
     }
   }
 
