@@ -440,7 +440,7 @@
 
   observer.observe(document.documentElement, { childList: true, subtree: true })
 
-  function renderPreview (url, form) {
+  function renderData (url, form) {
     const { data, form: schema } = form
     const el = document.createElement('table')
     el.innerHTML = `
@@ -451,15 +451,29 @@
         </tr>
       </thead>
       <tbody>
-        ${Object.entries(data).map(([key, value]) => `
-          <tr>
-            <td><code class="text-mono">${key}</code></td>
-            <td><pre>${JSON.stringify(value, null, 2)}</pre></td>
-          </tr>
-        `).join('')}
+        ${Object.entries(data).map(([key, value]) => {
+          if (value === '') return ''
+          return `
+            <tr>
+              <td>
+                ${form.getComponent(key).label}<br>
+                <code class="text-mono">${key}</code>
+              </td>
+              <td><pre class="text-mono">${renderValue(value)}</pre></td>
+            </tr>
+          `
+        }).join('')}
       </tbody>
     `
     return el
+    
+    function renderValue (value) {
+      if (typeof value === 'object') {
+        return JSON.stringify(value, null, 2)
+      } else {
+        return String(value)
+      }
+    }
   }
   
   function renderEditor (url, form) {
@@ -468,7 +482,7 @@
     })
   }
 
-  function renderForm (url, options) {
+  function renderPreview (url, options) {
     const styles = [
       'https://formio-sfds.herokuapp.com/sfgov/forms.css'
     ]
@@ -534,15 +548,15 @@
       }
       el.setAttribute(attr, true)
       let url = `${form.formio.projectUrl}/${form.form.path}`
-      /*
-      if (form.formio.submissionId) {
-        url = `${url}/submission/${form.formio.submissionId}`
-      }
-      */
       console.log('[sfds] rendering preview for: %s', url)
-      const rendered = location.hash?.endsWith('/edit')
-        ? renderEditor(url, form)
-        : renderPreview(url, form)
+      let el
+      if (location.hash?.match(/\/submission\/.+\/view/)) {
+        el = renderData(url, form)
+      } else if (location.hash?.match(/\/submission\/.+\/edit/)) {
+        el = renderEditor(url, form)
+      } else {
+        el = renderPreview(url, form)
+      }
       el.hidden = true
       el.parentNode.insertBefore(rendered, el)
     }
