@@ -520,7 +520,7 @@
               } else {
                 form.redraw()
               }
-            }, 1000)
+            }, 100)
             return form
           })
       </script>
