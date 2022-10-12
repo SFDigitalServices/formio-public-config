@@ -477,7 +477,9 @@
   }
   
   function renderEditor (url, form) {
-    return renderForm(url, {
+    const editUrl = form.submission ? `${url}/submission/${form.submission._id}` : url
+    console.log('render editor:', url, editUrl, form.submission)
+    return renderPreview(editUrl, {
       renderMode: 'flat'
     })
   }
