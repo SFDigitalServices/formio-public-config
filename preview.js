@@ -480,11 +480,14 @@
     const editUrl = form.submission ? `${url}/submission/${form.submission._id}` : url
     console.log('render editor:', url, editUrl, form.submission)
     return renderPreview(editUrl, {
-      renderMode: 'flat'
+      page: 1,
+      buttonSettings: {
+        showSubmit: true
+      }
     })
   }
 
-  function renderPreview (url, options, callback) {
+  function renderPreview (url, options) {
     const styles = [
       'https://formio-sfds.herokuapp.com/sfgov/forms.css'
     ]
@@ -511,7 +514,13 @@
         Formio.createForm(document.getElementById('formio'), ${JSON.stringify(url)}, ${JSON.stringify(options, null, 2)})
           .then(form => {
             console.info('[sfds] form ready!', form)
-            setTimeout(() => form.redraw(), 1000)
+            setTimeout(() => {
+              if (form.options.page) {
+                form.setPage(form.options.page)
+              } else {
+                form.redraw()
+              }
+            }, 1000)
             return form
           })
       </script>
