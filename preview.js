@@ -495,7 +495,9 @@
     ]
     const scripts = [
       unpkgUrl('formiojs', 'dist/formio.full.min.js'),
-      unpkgUrl('formio-sfds', 'dist/formio-sfds.standalone.js')
+      unpkgUrl('formio-sfds', 'dist/formio-sfds.standalone.js'),
+      // we need <sfgov-icon> for rendering the submission status
+      'https://unpkg.com/sfgov-design-system@2.5.0/dist/js/icons.js'
     ]
 
     const iframe = document.createElement('iframe')
