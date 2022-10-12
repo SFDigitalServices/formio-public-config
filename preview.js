@@ -493,7 +493,9 @@
 
   function renderPreview (url, options) {
     const styles = [
-      'https://formio-sfds.herokuapp.com/sfgov/forms.css'
+      'https://formio-sfds.herokuapp.com/sfgov/forms.css',
+      // we need all the utilities
+      unpkgUrl('sfgov-design-system', 'dist/css/utilities.css')
     ]
     const scripts = [
       unpkgUrl('formiojs', 'dist/formio.full.min.js'),
