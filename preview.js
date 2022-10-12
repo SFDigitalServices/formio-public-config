@@ -549,16 +549,18 @@
       el.setAttribute(attr, true)
       let url = `${form.formio.projectUrl}/${form.form.path}`
       console.log('[sfds] rendering preview for: %s', url)
-      let el
+      let rendered
       if (location.hash?.match(/\/submission\/.+\/view/)) {
-        el = renderData(url, form)
+        rendered = renderData(url, form)
       } else if (location.hash?.match(/\/submission\/.+\/edit/)) {
-        el = renderEditor(url, form)
+        rendered = renderEditor(url, form)
       } else {
-        el = renderPreview(url, form)
+        rendered = renderPreview(url, form)
       }
-      el.hidden = true
-      el.parentNode.insertBefore(rendered, el)
+      if (rendered) {
+        el.hidden = true
+        el.parentNode.insertBefore(rendered, el)
+      }
     }
   }
 
