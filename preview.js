@@ -447,21 +447,9 @@
   }
   
   function renderEditor (url, form) {
-    loadStylesheet('https://formio-sfds.herokuapp.com/sfgov/forms.css')
-
-    if (form.formio.submissionId) {
-      url = `${url}/submission/${form.formio.submissionId}`
-    }
-
-    const el = document.createElement('div')
-    loadScript(unpkgUrl('formio-sfds', 'dist/formio-sfds.standalone.js'))
-      .then(() => {
-        Formio.createForm(el, url, { renderMode: 'flat' })
-          .then(form => {
-            console.log('editor form:', form)
-          })
-      })
-    return el
+    return renderForm(url, {
+      renderMode: 'flat'
+    })
   }
 
   function renderForm (url, options) {
@@ -512,18 +500,6 @@
     link.rel = 'stylesheet'
     link.href = url
     return document.head.appendChild(link)
-  }
-  
-  function loadScript (url) {
-    const existing = Array.from(document.scripts).find(script => script.src === url)
-    if (existing) return Promise.resolve(existing)
-    const script = document.createElement('script')
-    script.src = url
-    document.body.appendChild(script)
-    return new Promise((resolve, reject) => {
-      script.onload = () => resolve(script)
-      script.onerror = reject
-    })
   }
 
   function hijackForm (el) {
