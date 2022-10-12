@@ -482,7 +482,7 @@
     })
   }
 
-  function renderPreview (url, options) {
+  function renderPreview (url, form, options) {
     const styles = [
       'https://formio-sfds.herokuapp.com/sfgov/forms.css'
     ]
