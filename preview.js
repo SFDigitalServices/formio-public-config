@@ -511,6 +511,7 @@
         ${styles.map(url => `@import url('${url}');`).join('\n')}
       </style>
       <div id="formio"></div>
+      <div id="status"></div>
       ${scripts.map(src => `<script src="${src}"></script>`).join('\n')}
       <script>
         Formio.createForm(document.getElementById('formio'), ${JSON.stringify(url)}, ${JSON.stringify(options, null, 2)})
@@ -523,8 +524,45 @@
                 form.redraw()
               }
             }, 10)
+            
+            form.on('submitDone', () => setStatus({
+              theme: 'success',
+              message: 'Submission saved'
+            }))
+
+            form.on('submitError', error => setStatus({
+              theme: 'failure',
+              message: \`<b>Error:</b> <pre>\${JSON.stringify(error, null, 2)}</pre>\`
+            }))
+
             return form
           })
+          
+          const statusThemes = {
+            success: {
+              symbol: 'check',
+              iconClass: 'bg-green-3 text-white',
+              messageClass: 'bg-green-1'
+            },
+            failure: {
+              symbol: 'close',
+              iconClass: 'bg-red-3 text-white',
+              messageClass: 'bg-red-1'
+            }
+          }
+          function setStatus (message, theme) {
+            const { symbol, iconClass, messageClass } = statusThemes[theme || 'success']
+            document.getElementById('status').innerHTML = \`
+              <div class="flex flex-col content-start md:flex-row text-slate-4">
+                <div class="flex px-28 py-12 rounded-t md:rounded-l md:rounded-t-0 md:py-28 md:px-8 \${iconClass || ''}">
+                  <sfgov-icon symbol="\${symbol}" class="flex items-start"></sfgov-icon>
+                </div>
+                <div class="px-28 py-12 rounded-b md:rounded-r md:rounded-l-0 md:p-28 \${messageClass || ''}">
+                  \${message}
+                </div>
+              </div>
+            \`
+          }
       </script>
     `
     return iframe
