@@ -448,15 +448,18 @@
   
   function renderEditor (url, form) {
     loadStylesheet('https://formio-sfds.herokuapp.com/sfgov/forms.css')
-    loadScript(unpkgUrl('formio-sfds', 'dist/formio-sfds.standalone.js'))
+
     if (form.formio.submissionId) {
       url = `${url}/submission/${form.formio.submissionId}`
     }
 
     const el = document.createElement('div')
-    Formio.createForm(el, url, { renderMode: 'flat' })
-      .then(form => {
-        console.log('editor form:', form)
+    loadScript(unpkgUrl('formio-sfds', 'dist/formio-sfds.standalone.js'))
+      .then(() => {
+        Formio.createForm(el, url, { renderMode: 'flat' })
+          .then(form => {
+            console.log('editor form:', form)
+          })
       })
     return el
   }
@@ -513,11 +516,14 @@
   
   function loadScript (url) {
     const existing = Array.from(document.scripts).find(script => script.src === url)
-    if (existing) return existing
+    if (existing) return Promise.resolve(existing)
     const script = document.createElement('script')
     script.src = url
     document.body.appendChild(script)
-    return script
+    return new Promise((resolve, reject) => {
+      script.onload = () => resolve(script)
+      script.onerror = reject
+    })
   }
 
   function hijackForm (el) {
