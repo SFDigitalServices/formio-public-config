@@ -446,20 +446,22 @@
     el.innerHTML = `
       <thead>
         <tr>
-          <th>Field</th>
-          <th>Value</th>
+          <th class="px-16 py-8">Field</th>
+          <th class="px-16 py-8">Value</th>
         </tr>
       </thead>
       <tbody>
-        ${Object.entries(data).map(([key, value]) => {
+        ${Object.entries(data).map(([key, value], i) => {
           if (value === '') return ''
           return `
-            <tr>
-              <td>
+            <tr class="${i % 2 ? 'bg-grey-1' : ''}">
+              <td class="p-16">
                 ${form.getComponent(key).label}<br>
                 <code class="text-mono">${key}</code>
               </td>
-              <td><pre class="text-mono">${renderValue(value)}</pre></td>
+              <td class="p-16">
+                <pre class="text-mono">${renderValue(value)}</pre>
+              </td>
             </tr>
           `
         }).join('')}
