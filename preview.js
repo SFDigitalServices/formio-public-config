@@ -481,8 +481,10 @@
     console.log('render editor:', url, editUrl, form.submission)
     return renderPreview(editUrl, {
       page: 1,
-      buttonSettings: {
-        showSubmit: true
+      i18n: {
+        en: {
+          Submit: 'Save submission'
+        }
       }
     })
   }
@@ -520,7 +522,7 @@
               } else {
                 form.redraw()
               }
-            }, 100)
+            }, 10)
             return form
           })
       </script>
