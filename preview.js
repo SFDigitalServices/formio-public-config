@@ -441,9 +441,25 @@
   observer.observe(document.documentElement, { childList: true, subtree: true })
 
   function renderPreview (url, form) {
-    return renderForm(url, {
-      renderMode: 'form'
-    })
+    const { data, form: schema } = form
+    const el = document.createElement('table')
+    el.innerHTML = `
+      <thead>
+        <tr>
+          <th>Field</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${Object.entries(data).map(([key, value]) => `
+          <tr>
+            <td><code class="text-mono">${key}</code></td>
+            <td><pre>${JSON.stringify(value, null, 2)}</pre></td>
+          </tr>
+        `).join('')}
+      </tbody>
+    `
+    return el
   }
   
   function renderEditor (url, form) {
