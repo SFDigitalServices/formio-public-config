@@ -525,15 +525,9 @@
               }
             }, 10)
             
-            form.on('submitDone', () => setStatus({
-              theme: 'success',
-              message: 'Submission saved'
-            }))
-
-            form.on('submitError', error => setStatus({
-              theme: 'failure',
-              message: \`<b>Error:</b> <pre>\${JSON.stringify(error, null, 2)}</pre>\`
-            }))
+            form
+              .on('submitDone', () => setStatus('Submission saved'))
+              .on('submitError', error => setStatus(\`<b>Error:</b> <pre>\${JSON.stringify(error, null, 2)}</pre>\`, 'failure'))
 
             return form
           })
