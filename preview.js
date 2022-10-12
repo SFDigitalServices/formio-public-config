@@ -484,7 +484,7 @@
     })
   }
 
-  function renderPreview (url, form, options) {
+  function renderPreview (url, options) {
     const styles = [
       'https://formio-sfds.herokuapp.com/sfgov/forms.css'
     ]
@@ -557,7 +557,7 @@
       } else if (location.hash?.match(/\/submission\/.+\/edit/)) {
         rendered = renderEditor(url, form)
       } else {
-        rendered = renderPreview(url, form)
+        rendered = renderPreview(url)
       }
       if (rendered) {
         el.hidden = true
