@@ -37,6 +37,7 @@
     'a[routerlink=view]': el => {
       el.lastChild.nodeValue = 'Preview'
     },
+    
     '.container-demo': el => {
       const login = el.querySelector('app-auth')
       classify(el, login, ['w-auto', 'lg:w-2/3', 'xl:w-1/3'])
@@ -408,6 +409,24 @@
     'div.k-grid-header .k-header-column-menu': el => {
       el.classList.add('items-end')
     },  
+
+    // Submission action links
+    'ul[aria-label=Submission] li[routerlink]': li => {
+      const parent = li.parentNode
+      switch (li.getAttribute('routerlink')) {
+        case 'view':
+          li.textContent = 'View'
+          parent.insertBefore(li, parent.firstChild)
+          break
+        case 'edit':
+          li.textContent = 'Edit submission'
+          break
+        case 'delete':
+          li.textContent = 'Delete submission'
+          break
+      }
+    },
+    
     // ---end VIEW DATA VIEW---  
 
     '[aria-label]:not([aria-label=""]):empty': el => {
