@@ -411,20 +411,23 @@
     },  
 
     // Submission action links
-    'ul[aria-label=Submission] li[routerlink]': li => {
-      const parent = li.parentNode
-      switch (li.getAttribute('routerlink')) {
-        case 'view':
-          li.textContent = 'View'
-          parent.insertBefore(li, parent.firstChild)
-          break
-        case 'edit':
-          li.textContent = 'Edit submission'
-          break
-        case 'delete':
-          li.textContent = 'Delete submission'
-          break
+    'ul[aria-label=Submission]:not([data-updated])': ul => {      
+      for (const li of el.querySelectorAll('li[routerlink]')) {
+        switch (li.getAttribute('routerlink')) {
+          case 'view':
+            li.textContent = 'View'
+            ul.insertBefore(li, ul.firstChild)
+            break
+          case 'edit':
+            li.textContent = 'Edit submission'
+            break
+          case 'delete':
+            li.textContent = 'Delete submission'
+            break
+        }
       }
+      ul.classList.add('mb-20')
+      ul.setAttribute('data-updated', true)
     },
     
     // ---end VIEW DATA VIEW---  
