@@ -432,6 +432,19 @@
       }
     },
     
+    'app-form a[href*=download].pull-right:not([hidden])': el => {
+      const icon = el.cloneNode(true)
+      el.hidden = true
+      const target = document.querySelector('ul[aria-label=Submission]')
+      const li = target.querySelector('li:not(.active, :empty)').cloneNode(true)
+      li.removeAttribute('routerlinkactive')
+      const existing = li.querySelector('a')
+      icon.className = existing.className
+      icon.textContent = 'Download as PDF'
+      existing.replaceWith(icon)
+      target.appendChild(li)
+    },
+    
     // ---end VIEW DATA VIEW---  
 
     '[aria-label]:not([aria-label=""]):empty': el => {
