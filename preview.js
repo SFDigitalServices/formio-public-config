@@ -630,7 +630,8 @@
       console.log('[sfds] rendering preview for: %s', url)
       let rendered
       if (location.hash?.match(/\/submission\/.+\/view/)) {
-        rendered = renderData(url, form)
+        location.replace(location.href.replace(/\/view$/, '/edit'))
+        // rendered = renderData(url, form)
       } else if (location.hash?.match(/\/submission\/.+\/edit/)) {
         rendered = renderEditor(url, form)
       } else {
