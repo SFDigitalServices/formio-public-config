@@ -432,20 +432,18 @@
       }
     },
     
-    'app-form a[href*=download].pull-right:not([hidden])': el => {
+    'app-form a[href*=download].pull-right': el => {
       const target = document.querySelector('ul[aria-label=Submission]')
-      // wait for the non-active link to show up
-      setTimeout(() => {
-        const li = target.querySelector('li:not(.active, :empty)').cloneNode(true)
-        li.removeAttribute('routerlinkactive')
-        const icon = el.cloneNode(true)
-        el.hidden = true      
-        const existing = li.querySelector('a')
-        icon.className = existing.className
-        icon.textContent = 'Download as PDF'
-        existing.replaceWith(icon)
-        target.appendChild(li)
-      }, 100)
+      const li = target.querySelector('li:not(:empty)').cloneNode(true)
+      classify(el, false, navLinkActiveClasses, navLinkInactiveClasses)
+      li.removeAttribute('routerlinkactive')
+      const icon = el.cloneNode(true)
+      el.hidden = true      
+      const existing = li.querySelector('a')
+      icon.className = existing.className
+      icon.textContent = 'Download as PDF'
+      existing.replaceWith(icon)
+      target.appendChild(li)
     },
     
     // ---end VIEW DATA VIEW---  
