@@ -412,7 +412,7 @@
     },  
 
     // Submission action links
-    'ul[aria-label=Submission]:not([data-updated])': ul => {      
+    'ul[aria-label=Submission]': ul => {      
       for (const li of ul.querySelectorAll('li[routerlinkactive]')) {
         const link = li.querySelector('a[routerlink]')
         if (!link) continue
@@ -430,7 +430,6 @@
         }
       }
       ul.classList.add('mb-20')
-      ul.setAttribute('data-updated', true)
     },
     
     // ---end VIEW DATA VIEW---  
