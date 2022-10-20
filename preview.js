@@ -413,17 +413,19 @@
 
     // Submission action links
     'ul[aria-label=Submission]:not([data-updated])': ul => {      
-      for (const li of ul.querySelectorAll('li[routerlink]')) {
-        switch (li.getAttribute('routerlink')) {
+      for (const li of ul.querySelectorAll('li[routerlinkactive]')) {
+        const link = li.querySelector('a[routerlink]')
+        if (!link) continue
+        switch (link.getAttribute('routerlink')) {
           case 'view':
-            li.textContent = 'View'
+            link.textContent = 'View'
             ul.insertBefore(li, ul.firstChild)
             break
           case 'edit':
-            li.textContent = 'Edit submission'
+            link.textContent = 'Edit submission'
             break
           case 'delete':
-            li.textContent = 'Delete submission'
+            link.textContent = 'Delete submission'
             break
         }
       }
