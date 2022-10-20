@@ -432,18 +432,17 @@
       }
     },
     
+    // this convoluted selector has to match an actions list that has links
     'app-form a[href*=download].pull-right': el => {
       const target = document.querySelector('ul[aria-label=Submission]')
-      const li = target.querySelector('li:not(:empty)').cloneNode(true)
-      classify(el, false, navLinkActiveClasses, navLinkInactiveClasses)
-      li.removeAttribute('routerlinkactive')
-      const icon = el.cloneNode(true)
-      el.hidden = true      
-      const existing = li.querySelector('a')
-      icon.className = existing.className
-      icon.textContent = 'Download as PDF'
-      existing.replaceWith(icon)
+      const li = document.createElement('li')
+      li.className = 'nav-item'
+      const clone = el.cloneNode(true)
+      clone.className = [...navLinkClasses, ...navLinkInactiveClasses].join(' ')
+      clone.textContent = 'Download as PDF'
+      li.appendChild(clone)
       target.appendChild(li)
+      el.remove()
     },
     
     // ---end VIEW DATA VIEW---  
