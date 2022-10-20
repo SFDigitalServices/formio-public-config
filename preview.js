@@ -411,25 +411,27 @@
       el.classList.add('items-end')
     },  
 
+    'ul[aria-label=Submission': el => {
+      el.classList.add('mb-20')
+    },
+
     // Submission action links
-    'ul[aria-label=Submission]': ul => {      
-      for (const li of ul.querySelectorAll('li[routerlinkactive]')) {
-        const link = li.querySelector('a[routerlink]')
-        if (!link) continue
-        switch (link.getAttribute('routerlink')) {
-          case 'view':
-            link.textContent = 'View'
-            ul.insertBefore(li, ul.firstChild)
-            break
-          case 'edit':
-            link.textContent = 'Edit submission'
-            break
-          case 'delete':
-            link.textContent = 'Delete submission'
-            break
-        }
+    'ul[aria-label=Submission] li[routerlinkactive]:not([data-moved])': li => {      
+      const link = li.querySelector('a[routerlink]')
+      if (!link) continue
+      switch (link.getAttribute('routerlink')) {
+        case 'view':
+          link.textContent = 'View'
+          li.setAttribute('data-moved', true)
+          li.parentNode.insertBefore(li, li.parentNode.firstChild)
+          break
+        case 'edit':
+          link.textContent = 'Edit submission'
+          break
+        case 'delete':
+          link.textContent = 'Delete submission'
+          break
       }
-      ul.classList.add('mb-20')
     },
     
     // ---end VIEW DATA VIEW---  
