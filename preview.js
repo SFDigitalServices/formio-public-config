@@ -411,7 +411,7 @@
       el.classList.add('items-end')
     },  
 
-    'ul[aria-label=Submission': el => {
+    'ul[aria-label=Submission]': el => {
       el.classList.add('mb-20')
     },
 
