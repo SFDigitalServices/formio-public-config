@@ -95,7 +95,19 @@
       const li = a.parentNode
       li.parentNode.insertBefore(li, li.parentNode.firstChild)
       a.setAttribute('data-moved', true)
+      li.textContent = 'Edit submission'
     },
+    
+    // Preview link
+    'app-form .nav-link[routerlink=view]': el => {
+      // TODO
+    },
+    
+    // Delete button
+    'app-form .nav-link[routerlink=delete]': el => {
+      el.textContent = 'Delete submission'
+    },
+    
     // --- start LOGIN PAGE---
     // Removes login accordion style
     '.card.card-primary.panel.panel-default': el => {
