@@ -418,7 +418,7 @@
     // Submission action links
     'ul[aria-label=Submission] li[routerlinkactive]:not([data-moved])': li => {      
       const link = li.querySelector('a[routerlink]')
-      if (!link) continue
+      if (!link) return
       switch (link.getAttribute('routerlink')) {
         case 'view':
           link.textContent = 'View'
