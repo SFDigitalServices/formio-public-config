@@ -433,11 +433,16 @@
     },
     
     'app-form a[href*=download].pull-right:not([hidden])': el => {
+      const target = document.querySelector('ul[aria-label=Submission]')
+      let li = target.querySelector('li:not(.active, :empty)')
+      if (!li) return
+      
+      li = li.cloneNode(true)
+      li.removeAttribute('routerlinkactive')
+
       const icon = el.cloneNode(true)
       el.hidden = true
-      const target = document.querySelector('ul[aria-label=Submission]')
-      const li = target.querySelector('li:not(.active, :empty)').cloneNode(true)
-      li.removeAttribute('routerlinkactive')
+      
       const existing = li.querySelector('a')
       icon.className = existing.className
       icon.textContent = 'Download as PDF'
