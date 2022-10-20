@@ -421,9 +421,7 @@
       if (!link) return
       switch (link.getAttribute('routerlink')) {
         case 'view':
-          link.textContent = 'View'
-          li.setAttribute('data-moved', true)
-          li.parentNode.insertBefore(li, li.parentNode.firstChild)
+          li.remove()
           break
         case 'edit':
           link.textContent = 'Edit submission'
