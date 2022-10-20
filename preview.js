@@ -95,17 +95,6 @@
       const li = a.parentNode
       li.parentNode.insertBefore(li, li.parentNode.firstChild)
       a.setAttribute('data-moved', true)
-      li.textContent = 'Edit submission'
-    },
-    
-    // Preview link
-    'app-form .nav-link[routerlink=view]': el => {
-      // TODO
-    },
-    
-    // Delete button
-    'app-form .nav-link[routerlink=delete]': el => {
-      el.textContent = 'Delete submission'
     },
     
     // --- start LOGIN PAGE---
@@ -424,7 +413,7 @@
 
     // Submission action links
     'ul[aria-label=Submission]:not([data-updated])': ul => {      
-      for (const li of el.querySelectorAll('li[routerlink]')) {
+      for (const li of ul.querySelectorAll('li[routerlink]')) {
         switch (li.getAttribute('routerlink')) {
           case 'view':
             li.textContent = 'View'
