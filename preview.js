@@ -8,7 +8,7 @@
   
   console.log('[sfds] preview')
   document.body.setAttribute(dataAttribute, 'true')
-
+  
   const dependencies = {
     'sfgov-design-system': '2.5.0',
     'formiojs': '4.13.1',
@@ -16,7 +16,11 @@
   }
   loadStylesheet(unpkgUrl('sfgov-design-system', 'dist/css/fonts.css'))
   loadStylesheet(unpkgUrl('sfgov-design-system', 'dist/css/sfds.css'))
-  
+
+  addGlobalStyles(`
+    [class*=ace_] { font-family: Roboto mono, monospace !important; }
+  `)
+
   document.body.classList.add('font-rubik')
   const heading = document.querySelector('header')
   heading?.classList.add('py-28', 'mb-96')
@@ -739,4 +743,11 @@
     return `https://unpkg.com/${packageName}@${version}/${filename}`
   }
   
-  })('data-sfds-modified')
+  function addGlobalStyles (css) {
+    const style = document.createElement('style')
+    style.innerHTML = css
+    document.head.appendChild(style)
+    return style
+  }
+  
+})('data-sfds-modified')
